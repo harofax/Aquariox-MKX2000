@@ -670,8 +670,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishData: {fileID: 11400000, guid: 0bf172fcb65d1cd4cb23e7d3245caa52, type: 2}
   fishType: 0
-  behaviours:
-  - {fileID: 0}
   fishLayer:
     serializedVersion: 2
     m_Bits: 64

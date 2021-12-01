@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class FlockAvoidBehaviour : FlockBehaviour
 {
-    public override Vector3 CalculateNextMove(FishBase fish, Transform[] flock)
+    public override Vector3 CalculateNextMove(FishBase fish, List<Transform> flock)
     {
-        if (flock.Length <= 0) return Vector3.zero;
+        if (flock.Count == 0) return Vector3.zero;
         throw new System.NotImplementedException();
     }
 }

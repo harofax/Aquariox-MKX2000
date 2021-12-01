@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class FlockAlignmentBehaviour : FlockBehaviour
 {
-    public override Vector3 CalculateNextMove(FishBase fish, Transform[] flock)
+    public override Vector3 CalculateNextMove(FishBase fish, List<Transform> flock)
     {
-        if (flock.Length <= 0) return fish.transform.forward;
+        if (flock.Count == 0) return fish.transform.forward;
         
         Vector3 flockDirection = Vector3.zero;
         
@@ -17,8 +17,8 @@ public class FlockAlignmentBehaviour : FlockBehaviour
             flockDirection += neighbour.forward;
         }
         
-        flockDirection /= flock.Length;
-
+        flockDirection /= flock.Count;
+    
         return flockDirection;
     }
 }

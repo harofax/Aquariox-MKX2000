@@ -9,10 +9,7 @@ public class PerchFish : FishBase
     {
     }
 
-    private protected override void Flock()
-    {
-        
-    }
+   
 
     private void Update()
     {

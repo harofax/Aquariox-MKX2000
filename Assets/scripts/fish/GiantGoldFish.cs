@@ -4,26 +4,9 @@ using UnityEngine;
 
 public class GiantGoldFish : FishBase
 {
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
     private protected override void Execute()
     {
         throw new System.NotImplementedException();
     }
-
-    private protected override void Flock()
-    {
-        throw new System.NotImplementedException();
-    }
+    
 }

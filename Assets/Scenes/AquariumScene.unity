@@ -5898,7 +5898,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
       propertyPath: behaviours.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
       propertyPath: fishies.Array.data[0]
@@ -5916,6 +5916,10 @@ PrefabInstance:
       propertyPath: behaviours.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: d5d913d5cbbff784ba59321f15fe1ca6, type: 2}
+    - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
+      propertyPath: behaviours.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5354eb6d8d3732646ba6430304c59748, type: 2}
     - target: {fileID: 1286425527879282246, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5972,6 +5976,38 @@ PrefabInstance:
     - target: {fileID: 487032348, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
       propertyPath: m_LocalPosition.y
       value: 11.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Size.y
+      value: 12.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Center.y
+      value: 3.43
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Size.x
+      value: 1.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Size.y
+      value: 12.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Size.z
+      value: 1.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
+      propertyPath: m_Center.y
+      value: -3.43
       objectReference: {fileID: 0}
     - target: {fileID: 2176987231791459734, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
       propertyPath: m_Name
@@ -6084,7 +6120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6380211640480187003, guid: 9158f011b35b82040afd7ba3418989f1, type: 3}
       propertyPath: startFish
-      value: 20
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 6380211640480187003, guid: 9158f011b35b82040afd7ba3418989f1, type: 3}
       propertyPath: fishNeighbourUpdateRate

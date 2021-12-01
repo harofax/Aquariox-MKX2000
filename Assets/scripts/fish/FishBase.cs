@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public enum FishState
@@ -35,6 +36,8 @@ public abstract class FishBase : MonoBehaviour
     private protected float MoneyRate { get; private set; }
     private protected int MoneyAmount { get; private set; }
     private protected float MoveSpeed { get; private set; }
+    
+    private protected float TurningSpeed { get; private set; }
     private protected float SightRange { get; private set; }
     private protected int MaxSchoolSize { get; private set; }
     private protected float Intimacy { get; private set; }
@@ -45,19 +48,22 @@ public abstract class FishBase : MonoBehaviour
     private FishState currentState;
     
     private FlockBehaviour[] behaviours;
-    protected Transform[] neighbours;
+    
+    protected List<Transform> neighbours = new List<Transform>();
+
+    protected Rigidbody rb;
 
     private void Awake()
     {
         SetFishData(fishData);
-        neighbours = new Transform[MaxSchoolSize];
         behaviours = FishManager.Instance.behaviours;
+        rb = GetComponent<Rigidbody>();
     }
 
     private void OnEnable()
     {
         GameManager.OnSchoolingTick += GetNeighbouringFish;
-        GameManager.OnTick += Flock;
+        //GameManager.OnTick += Flock;
     }
 
     protected void ChangeState(FishState newState)
@@ -72,12 +78,21 @@ public abstract class FishBase : MonoBehaviour
 
     protected void GetNeighbouringFish()
     {
+        neighbours.Clear();
         Collider[] neighbourFish = new Collider[MaxSchoolSize];
-        int fishFound = Physics.OverlapSphereNonAlloc(transform.position, SightRange, neighbourFish,
-        fishLayer);
-        for (int i = 0; i < fishFound; i++)
+        int hits = Physics.OverlapSphereNonAlloc(
+            transform.position, 
+            SightRange, neighbourFish,
+        fishLayer,
+            QueryTriggerInteraction.Collide);
+        for (int i = 0; i < hits; i++)
         {
-            neighbours[i] = neighbourFish[i].transform;
+            if (neighbourFish[i].transform == this.transform)
+            {
+                continue;
+            }
+            Debug.DrawLine(transform.position, neighbourFish[i].transform.position, Color.yellow);
+            neighbours.Add(neighbourFish[i].transform);
         }
     }
 
@@ -85,6 +100,27 @@ public abstract class FishBase : MonoBehaviour
 
     private protected virtual void Flock()
     {
+        if (behaviours.Length == 0)
+        {
+            Debug.LogError("Fish behaviour is missing", this);
+        }
+
+        if (neighbours.Count == 0)
+        {
+            Move(transform.forward);
+            return;
+        }
+        Vector3 movement = Vector3.zero;
+        for (int i = 0; i < behaviours.Length; i++)
+        {
+            Vector3 moveCalc = behaviours[i].CalculateNextMove(this, neighbours);
+
+            movement += moveCalc;
+        }
+
+        movement = movement.normalized;
+        
+        Move(movement);
     }
     
 
@@ -95,20 +131,34 @@ public abstract class FishBase : MonoBehaviour
 
     private protected void Move(Vector3 movement)
     {
-        transform.rotation = Quaternion.LookRotation(movement);
-        transform.position = transform.forward * MoveSpeed * Time.deltaTime;
+        Quaternion rot = Quaternion.Slerp(
+            transform.rotation,
+            Quaternion.LookRotation(movement),
+            TurningSpeed * Time.fixedDeltaTime);
+        
+        rb.MovePosition(transform.position + movement * Time.fixedDeltaTime);
+        rb.MoveRotation(rot);
+        // transform.rotation = Quaternion.LookRotation(movement);
+        // transform.Translate( 0, 0, MoveSpeed * Time.deltaTime);
     }
 
-    protected void SetFishData(FishData fishData)
+    protected void SetFishData(FishData inputData)
     {
-        HungerRate = fishData.hungerRate;
-        HappinessModifier = fishData.happinessModifier;
-        Aggression = fishData.docileness;
-        MoneyRate = fishData.moneyRate;
-        MoneyAmount = fishData.moneyAmount;
-        MoveSpeed = fishData.moveSpeed;
-        MaxSchoolSize = fishData.maxSchoolSize;
-        SightRange = fishData.sightRange;
-        Intimacy = fishData.intimacy;
+        HungerRate = inputData.hungerRate;
+        HappinessModifier = inputData.happinessModifier;
+        Aggression = inputData.docileness;
+        MoneyRate = inputData.moneyRate;
+        MoneyAmount = inputData.moneyAmount;
+        MoveSpeed = inputData.moveSpeed;
+        TurningSpeed = inputData.turnSpeed;
+        MaxSchoolSize = inputData.maxSchoolSize;
+        SightRange = inputData.sightRange;
+        Intimacy = inputData.intimacy;
+    }
+
+    private void FixedUpdate()
+    {
+        Flock();
+        //rb.AddForce(transform.forward * (MoveSpeed * Time.fixedDeltaTime), ForceMode.VelocityChange);
     }
 }
