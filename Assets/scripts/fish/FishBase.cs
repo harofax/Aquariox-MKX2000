@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum FishState
 {
@@ -71,7 +72,7 @@ public abstract class FishBase : MonoBehaviour
         currentState = newState;
     }
 
-    protected void SetTarget(Transform newTarget)
+    public void SetTarget(Transform newTarget)
     {
         CurrentTarget = newTarget;
     }
@@ -107,7 +108,7 @@ public abstract class FishBase : MonoBehaviour
 
         if (neighbours.Count == 0)
         {
-            Move(transform.forward);
+            Move(transform.forward * MoveSpeed);
             return;
         }
         Vector3 movement = Vector3.zero;
@@ -120,7 +121,7 @@ public abstract class FishBase : MonoBehaviour
 
         movement = movement.normalized;
         
-        Move(movement);
+        Move(movement * MoveSpeed);
     }
     
 
@@ -136,7 +137,7 @@ public abstract class FishBase : MonoBehaviour
             Quaternion.LookRotation(movement),
             TurningSpeed * Time.fixedDeltaTime);
         
-        rb.MovePosition(transform.position + movement * Time.fixedDeltaTime);
+        rb.MovePosition(Vector3.MoveTowards(transform.position, transform.position + movement, Time.fixedDeltaTime));
         rb.MoveRotation(rot);
         // transform.rotation = Quaternion.LookRotation(movement);
         // transform.Translate( 0, 0, MoveSpeed * Time.deltaTime);
@@ -149,16 +150,15 @@ public abstract class FishBase : MonoBehaviour
         Aggression = inputData.docileness;
         MoneyRate = inputData.moneyRate;
         MoneyAmount = inputData.moneyAmount;
-        MoveSpeed = inputData.moveSpeed;
-        TurningSpeed = inputData.turnSpeed;
+        MoveSpeed = Random.Range(1f, inputData.moveSpeed);
+        TurningSpeed = Random.Range(1, inputData.turnSpeed);
         MaxSchoolSize = inputData.maxSchoolSize;
         SightRange = inputData.sightRange;
         Intimacy = inputData.intimacy;
     }
 
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         Flock();
-        //rb.AddForce(transform.forward * (MoveSpeed * Time.fixedDeltaTime), ForceMode.VelocityChange);
     }
 }

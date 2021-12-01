@@ -608,7 +608,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!198 &1484190687
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5424,6 +5424,7 @@ MonoBehaviour:
   rotationVectorOrigin: {fileID: 1781097572}
   clickParticles: {fileID: 1484190687}
   pokeForce: 17.66
+  pokeAnimationDuration: 1
 --- !u!1 &1713049437
 GameObject:
   m_ObjectHideFlags: 0
@@ -5893,33 +5894,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1843892150}
     - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
+      propertyPath: playerCursor
+      value: 
+      objectReference: {fileID: 1484190689}
+    - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
       propertyPath: fishies.Array.size
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
-      propertyPath: behaviours.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
-      propertyPath: fishies.Array.data[0]
-      value: 
-      objectReference: {fileID: 8672187412845386001, guid: 64b355742034d64479e83ce63ca84ffc, type: 3}
-    - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
-      propertyPath: fishies.Array.data[1]
-      value: 
-      objectReference: {fileID: 103275133, guid: 578c1844e2d19574bb5870c871e7c3b6, type: 3}
-    - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
-      propertyPath: fishies.Array.data[2]
+      propertyPath: fishies.Array.data[3]
       value: 
       objectReference: {fileID: 1064206480, guid: f0a1615d9c29eed47ae2f6eb4e8f6f10, type: 3}
     - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
-      propertyPath: behaviours.Array.data[0]
+      propertyPath: fishies.Array.data[4]
       value: 
-      objectReference: {fileID: 11400000, guid: d5d913d5cbbff784ba59321f15fe1ca6, type: 2}
+      objectReference: {fileID: 1064206480, guid: f0a1615d9c29eed47ae2f6eb4e8f6f10, type: 3}
     - target: {fileID: 1286425527879282245, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
-      propertyPath: behaviours.Array.data[1]
+      propertyPath: fishies.Array.data[5]
       value: 
-      objectReference: {fileID: 11400000, guid: 5354eb6d8d3732646ba6430304c59748, type: 2}
+      objectReference: {fileID: 8672187412845386001, guid: 64b355742034d64479e83ce63ca84ffc, type: 3}
     - target: {fileID: 1286425527879282246, guid: 9ce3bf4953c0bd746b8856c1081d8188, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -5973,42 +5966,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 487032348, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 11.36
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Size.x
-      value: 1.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Size.y
-      value: 12.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Size.z
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230644128843, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Center.y
-      value: 3.43
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Size.x
-      value: 1.58
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Size.y
-      value: 12.93
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Size.z
-      value: 1.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2176987230784342373, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
-      propertyPath: m_Center.y
-      value: -3.43
-      objectReference: {fileID: 0}
     - target: {fileID: 2176987231791459734, guid: 3ac46f03bfdd6844ea943905e2e8e4f3, type: 3}
       propertyPath: m_Name
       value: Aquarium
@@ -6120,7 +6077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6380211640480187003, guid: 9158f011b35b82040afd7ba3418989f1, type: 3}
       propertyPath: startFish
-      value: 12
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 6380211640480187003, guid: 9158f011b35b82040afd7ba3418989f1, type: 3}
       propertyPath: fishNeighbourUpdateRate

@@ -23,7 +23,7 @@ public class FishData : ScriptableObject
     [Range(0.1f, 10f)]
     public float moveSpeed;
 
-    [Range(0.1f, 10f)]
+    [Range(1f, 10f)]
     public float turnSpeed;
 
     [Range(1, 20)]
@@ -32,6 +32,6 @@ public class FishData : ScriptableObject
     [Range(1f, 10f)]
     public float sightRange;
 
-    [Range(0.1f, 2f)]
+    [Range(1f, 8f)]
     public float intimacy;
 }
