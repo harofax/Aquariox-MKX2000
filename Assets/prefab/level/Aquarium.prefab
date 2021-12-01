@@ -1,5 +1,99 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &487032347
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 487032348}
+  - component: {fileID: 487032349}
+  m_Layer: 7
+  m_Name: Spot Light (4)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &487032348
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487032347}
+  m_LocalRotation: {x: -0.5607906, y: -0.4307133, z: -0.4307133, w: -0.5607906}
+  m_LocalPosition: {x: -25.62, y: 7.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2176987231791459737}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 14.948, y: 90, z: -270}
+--- !u!108 &487032349
+Light:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 487032347}
+  m_Enabled: 1
+  serializedVersion: 10
+  m_Type: 0
+  m_Shape: 0
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Intensity: 1.1
+  m_Range: 28.74
+  m_SpotAngle: 151.3
+  m_InnerSpotAngle: 21.80208
+  m_CookieSize: 10
+  m_Shadows:
+    m_Type: 0
+    m_Resolution: -1
+    m_CustomResolution: -1
+    m_Strength: 1
+    m_Bias: 0.05
+    m_NormalBias: 0.4
+    m_NearPlane: 0.2
+    m_CullingMatrixOverride:
+      e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
+    m_UseCullingMatrixOverride: 0
+  m_Cookie: {fileID: 0}
+  m_DrawHalo: 0
+  m_Flare: {fileID: 0}
+  m_RenderMode: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingLayerMask: 1
+  m_Lightmapping: 4
+  m_LightShadowCasterMode: 0
+  m_AreaSize: {x: 1, y: 1}
+  m_BounceIntensity: 1
+  m_ColorTemperature: 6570
+  m_UseColorTemperature: 0
+  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_UseBoundingSphereOverride: 0
+  m_UseViewFrustumForShadowCasterCull: 1
+  m_ShadowRadius: 0
+  m_ShadowAngle: 0
 --- !u!1 &2176987230302950125
 GameObject:
   m_ObjectHideFlags: 0
@@ -10,12 +104,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2176987230302950127}
   - component: {fileID: 2176987230302950124}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230302950127
 Transform:
@@ -106,12 +200,12 @@ GameObject:
   - component: {fileID: 2176987230454367287}
   - component: {fileID: 2176987230454367284}
   - component: {fileID: 2176987230454367285}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall_floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230454367286
 Transform:
@@ -201,12 +295,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2176987230606820551}
   - component: {fileID: 2176987230606820550}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230606820551
 Transform:
@@ -216,7 +310,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2176987230606820548}
   m_LocalRotation: {x: 0, y: -0.70710677, z: -0.70710677, w: 0}
-  m_LocalPosition: {x: 7.97, y: -11.59, z: 0}
+  m_LocalPosition: {x: 7.97, y: -9.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -300,7 +394,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230611077330
 Transform:
@@ -342,12 +436,12 @@ GameObject:
   - component: {fileID: 2176987230644128845}
   - component: {fileID: 2176987230644128842}
   - component: {fileID: 2176987230644128843}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall_left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230644128844
 Transform:
@@ -440,12 +534,12 @@ GameObject:
   - component: {fileID: 2176987230733692602}
   - component: {fileID: 2176987230733692603}
   - component: {fileID: 2176987230733692607}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230733692604
 Transform:
@@ -551,12 +645,12 @@ GameObject:
   - component: {fileID: 2176987230784342375}
   - component: {fileID: 2176987230784342372}
   - component: {fileID: 2176987230784342373}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall_right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230784342374
 Transform:
@@ -648,12 +742,12 @@ GameObject:
   - component: {fileID: 2176987230854306275}
   - component: {fileID: 2176987230854306272}
   - component: {fileID: 2176987230854306273}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: wall_back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987230854306274
 Transform:
@@ -743,12 +837,12 @@ GameObject:
   m_Component:
   - component: {fileID: 2176987231791459737}
   - component: {fileID: 2176987231791459736}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Aquarium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &2176987231791459737
 Transform:
@@ -770,6 +864,7 @@ Transform:
   - {fileID: 2176987230644128844}
   - {fileID: 2176987230454367286}
   - {fileID: 2176987230606820551}
+  - {fileID: 487032348}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -785,9 +880,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42a179234a6537240b39afacc9b2d581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  left: {fileID: 2176987230644128844}
-  right: {fileID: 2176987230784342374}
-  back: {fileID: 2176987230854306274}
-  front: {fileID: 2176987230611077330}
-  bottom: {fileID: 2176987230454367286}
-  top: {fileID: 2176987230733692604}
+  spawnZone:
+    m_Center: {x: 0, y: 4.02, z: 0}
+    m_Extent: {x: 5.15, y: 6.12, z: 10.02}

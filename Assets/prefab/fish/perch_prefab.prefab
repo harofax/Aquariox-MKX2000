@@ -602,8 +602,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6413939732144940758}
   - component: {fileID: 7982904081562113264}
-  - component: {fileID: 8672187412845386001}
   - component: {fileID: 3828325429578307775}
+  - component: {fileID: 8672187412845386001}
   m_Layer: 6
   m_Name: perch_prefab
   m_TagString: Untagged
@@ -643,19 +643,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!114 &8672187412845386001
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6413939732144940757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2dba3802b7d9ef439c5669dd04bdd18, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abborreData: {fileID: 11400000, guid: 0bf172fcb65d1cd4cb23e7d3245caa52, type: 2}
 --- !u!65 &3828325429578307775
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -669,6 +656,25 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 2.48}
   m_Center: {x: 0, y: 0.24, z: -1.25}
+--- !u!114 &8672187412845386001
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6413939732144940757}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2dba3802b7d9ef439c5669dd04bdd18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishData: {fileID: 11400000, guid: 0bf172fcb65d1cd4cb23e7d3245caa52, type: 2}
+  fishType: 0
+  behaviours:
+  - {fileID: 0}
+  fishLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &6413939732724487037
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -11,7 +12,25 @@ public class FishManager : MonoBehaviour
     private FishBase[] fishies;
 
     [SerializeField]
+    internal FlockBehaviour[] behaviours;
+    
+    [SerializeField]
     private Aquarium aquarium;
+    
+    private static FishManager _instance;
+    public static FishManager Instance => _instance;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +45,7 @@ public class FishManager : MonoBehaviour
 
             // coinflip to rotate the other way
             startRot.eulerAngles = Random.Range(0, 2) == 0 ? 
-                startRot.eulerAngles + 180f * Vector3.up : 
+                startRot.eulerAngles + 180f * Vector3.up :
                 startRot.eulerAngles;
 
             Vector3 pos = aquarium.GetRandomPosition();

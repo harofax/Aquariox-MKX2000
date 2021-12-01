@@ -1,0 +1,895 @@
+Using pre-set license
+Built from '2021.2/staging' branch; Version is '2021.2.3f1 (32358a8527b4) revision 3290506'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 10 Pro; OS build 19043.1348; Version 2009; 64bit' Language: 'en' Physical Memory: 16324 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+COMMAND LINE ARGUMENTS:
+C:\Program Files\Unity\Hub\Editor\2021.2.3f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+C:/Users/harofax/Downloads/gamedev/unityprojects/Aquariox-MKX2000/Aquariox-MKX2000
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+49805
+Successfully changed project path to: C:/Users/harofax/Downloads/gamedev/unityprojects/Aquariox-MKX2000/Aquariox-MKX2000
+C:/Users/harofax/Downloads/gamedev/unityprojects/Aquariox-MKX2000/Aquariox-MKX2000
+[UnityMemory] Configuration Parameters - Can be set up in boot.config
+    "memorysetup-bucket-allocator-granularity=16"
+    "memorysetup-bucket-allocator-bucket-count=8"
+    "memorysetup-bucket-allocator-block-size=33554432"
+    "memorysetup-bucket-allocator-block-count=8"
+    "memorysetup-main-allocator-block-size=16777216"
+    "memorysetup-thread-allocator-block-size=16777216"
+    "memorysetup-gfx-main-allocator-block-size=16777216"
+    "memorysetup-gfx-thread-allocator-block-size=16777216"
+    "memorysetup-cache-allocator-block-size=4194304"
+    "memorysetup-typetree-allocator-block-size=2097152"
+    "memorysetup-profiler-bucket-allocator-granularity=16"
+    "memorysetup-profiler-bucket-allocator-bucket-count=8"
+    "memorysetup-profiler-bucket-allocator-block-size=33554432"
+    "memorysetup-profiler-bucket-allocator-block-count=8"
+    "memorysetup-profiler-allocator-block-size=16777216"
+    "memorysetup-profiler-editor-allocator-block-size=1048576"
+    "memorysetup-temp-allocator-size-main=16777216"
+    "memorysetup-job-temp-allocator-block-size=2097152"
+    "memorysetup-job-temp-allocator-block-size-background=1048576"
+    "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+    "memorysetup-temp-allocator-size-background-worker=32768"
+    "memorysetup-temp-allocator-size-job-worker=262144"
+    "memorysetup-temp-allocator-size-preload-manager=33554432"
+    "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+    "memorysetup-temp-allocator-size-audio-worker=65536"
+    "memorysetup-temp-allocator-size-cloud-worker=32768"
+    "memorysetup-temp-allocator-size-gi-baking-worker=262144"
+    "memorysetup-temp-allocator-size-gfx=262144"
+Refreshing native plugins compatible for Editor in 84.00 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2021.2.3f1 (32358a8527b4)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/harofax/Downloads/gamedev/unityprojects/Aquariox-MKX2000/Aquariox-MKX2000/Assets
+GfxDevice: creating device client; threaded=0; jobified=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce GTX 1080 (ID=0x1b80)
+    Vendor:   NVIDIA
+    VRAM:     8079 MB
+    Driver:   30.0.14.9676
+Initialize mono
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56104
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.3f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.006144 seconds.
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 82.81 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.602 seconds
+Domain Reload Profiling:
+	ReloadAssembly (602ms)
+		BeginReloadAssembly (73ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (0ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (1ms)
+		EndReloadAssembly (460ms)
+			LoadAssemblies (71ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (104ms)
+			ReleaseScriptCaches (0ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (284ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (83ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (139ms)
+				ProcessInitializeOnLoadMethodAttributes (47ms)
+				AfterProcessingInitializeOnLoad (0ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (0ms)
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.007541 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.46 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Error saving file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <00c558282d074245ab3496e2d108079b>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <00c558282d074245ab3496e2d108079b>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding, System.Int32 bufferSize) [0x00055] in <00c558282d074245ab3496e2d108079b>:0 
+  at System.IO.StreamWriter..ctor (System.String path, System.Boolean append, System.Text.Encoding encoding) [0x00000] in <00c558282d074245ab3496e2d108079b>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamWriter..ctor(string,bool,System.Text.Encoding)
+  at System.IO.File.WriteAllText (System.String path, System.String contents, System.Text.Encoding encoding) [0x00034] in <00c558282d074245ab3496e2d108079b>:0 
+  at UnityEditor.StateCache`1[T].SetState (UnityEngine.Hash128 key, T obj) [0x0004b] in <ba030cc3475e41258f58c8c467eb72e2>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:SetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:set_lockedLayers (int)
+UnityEditor.Tools:OnEnable ()
+UnityEngine.ScriptableObject:CreateInstance (System.Type)
+UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
+UnityEditor.Tools:get_get ()
+UnityEditor.Tools:get_visibleLayers ()
+UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs:121)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.565 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1566ms)
+		BeginReloadAssembly (161ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1317ms)
+			LoadAssemblies (87ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (258ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (834ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (13ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (85ms)
+				ProcessInitializeOnLoadAttributes (708ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (6ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3699 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 31 unused Assets / (111.7 KB). Loaded Objects now: 4156.
+Memory consumption went from 145.3 MB to 145.2 MB.
+Total: 3.048400 ms (FindLiveObjects: 0.288700 ms CreateObjectMapping: 0.230700 ms MarkObjects: 2.426400 ms  DeleteObjects: 0.101600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 918519.276553 seconds.
+  path: Assets/art/environment/glass/scratches.jpg
+  artifactKey: Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratches.jpg using Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72f92b37cb6a0789ed009c94a8e860ed') in 0.095225 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 158.666550 seconds.
+  path: Assets/art/environment/glass/scratches.jpg
+  artifactKey: Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratches.jpg using Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '72d5f58be8de5f360cad97167089ce0e') in 0.017101 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 13.758123 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '70ea060d6ee390684df26d42988a247b') in 0.010688 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.573930 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd384e3e82df37a973601cc8441bfab2b') in 0.011107 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.685170 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f30b66c27ef66cbcef815663d2648c73') in 0.009330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.693214 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '932e2fd9dd005e2ffd3bbe17c895a253') in 0.010238 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 2.538784 seconds.
+  path: Assets/art/environment/glass/scratches.jpg
+  artifactKey: Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratches.jpg using Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fa0f3725b5783c3ed8702fe32023d8af') in 0.009628 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 9.070649 seconds.
+  path: Assets/art/environment/glass/scratches.jpg
+  artifactKey: Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratches.jpg using Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2e8ddbf17612f614621cdcfd971af8ef') in 0.010472 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.404146 seconds.
+  path: Assets/art/environment/glass/scratches.jpg
+  artifactKey: Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratches.jpg using Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ff5ffc4fb93e238739c43bb0a7317acc') in 0.010554 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.110999 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bf1639eef0c057317778b294f809fd4c') in 0.011334 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 17.821600 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897f84a1b2b3d1eebeb121c3f0c439d9') in 0.013320 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '58cb5b72b791495601bb2de2fa15c250') in 0.012700 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.380843 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b50c9e039a3c0a816c9866ed87175c5f') in 0.013296 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000043 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aca02cd421add156f136cf9c5727d878') in 0.009461 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.373251 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '412a76a1d1b2964d68183e6282eea3cc') in 0.013145 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000028 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce9223b0d206b23dea78a7f4f4bbfd38') in 0.010649 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 6.449982 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '74da776e2fe33d63717809586b0c68e9') in 0.014708 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.121051 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dc7ed8029f330f5b8fa32a6d689aceb') in 0.011867 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 8.423716 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5bf7a501f6f839cb69909db7b6b828d') in 0.009412 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.018906 seconds.
+  path: Assets/art/environment/glass/scratches.jpg
+  artifactKey: Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratches.jpg using Guid(89af9556119e1bb419e81f162070429c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e6986f9a811c6d9fe4afd9670d43e2c') in 0.010390 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.893543 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad7bc3651f3e2ac1c642a08f4671b3f2') in 0.010453 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '85797088adccdfe73dfce545bc10aeba') in 0.008703 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 20.756326 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b50d8bb1a2907604e2b295888edf5ee6') in 0.011565 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.270972 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21afd25767344f70e98c47b4985e8396') in 0.012035 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 7.743592 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '944dd31ff617ff81a844250f3edf5358') in 0.013475 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e7bb0cdb065e64539938360d2da1fd82') in 0.011400 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.880312 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd7744b67ffdd8a3ece49c3864b4136ce') in 0.012335 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd74a60c369aded2c60cced4b777439fa') in 0.010336 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 14.676508 seconds.
+  path: Assets/art/environment/glass/glass-normal.jpg
+  artifactKey: Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/glass-normal.jpg using Guid(dd98962edcc8d394cb30ddbe980cfb3d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c72e38dc12dee5bf9fe18ab1edcdda1') in 0.012214 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/art/environment/glass/scratsrgraass.jpg
+  artifactKey: Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/art/environment/glass/scratsrgraass.jpg using Guid(a3fc54ae18f0ac8498579f49e7b5bcca) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4f1cc5df03ad4e1d426a8e6846d5384a') in 0.009359 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009566 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.80 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.464 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1466ms)
+		BeginReloadAssembly (242ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (11ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (104ms)
+		EndReloadAssembly (1109ms)
+			LoadAssemblies (114ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (273ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (42ms)
+			SetupLoadedEditorAssemblies (534ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (16ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (96ms)
+				ProcessInitializeOnLoadAttributes (393ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (20ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.86 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3682 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.8 KB). Loaded Objects now: 4586.
+Memory consumption went from 161.0 MB to 160.9 MB.
+Total: 3.306400 ms (FindLiveObjects: 0.531900 ms CreateObjectMapping: 0.239800 ms MarkObjects: 2.429400 ms  DeleteObjects: 0.104300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006959 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.202 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1203ms)
+		BeginReloadAssembly (130ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (9ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (973ms)
+			LoadAssemblies (87ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (290ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (424ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (68ms)
+				ProcessInitializeOnLoadAttributes (315ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (14ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.8 KB). Loaded Objects now: 4589.
+Memory consumption went from 161.0 MB to 160.9 MB.
+Total: 2.575300 ms (FindLiveObjects: 0.311700 ms CreateObjectMapping: 0.210200 ms MarkObjects: 1.989700 ms  DeleteObjects: 0.063000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010106 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.73 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.183 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1184ms)
+		BeginReloadAssembly (149ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (40ms)
+		EndReloadAssembly (938ms)
+			LoadAssemblies (98ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (271ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (43ms)
+			SetupLoadedEditorAssemblies (424ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (12ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (74ms)
+				ProcessInitializeOnLoadAttributes (309ms)
+				ProcessInitializeOnLoadMethodAttributes (21ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.7 KB). Loaded Objects now: 4592.
+Memory consumption went from 161.0 MB to 161.0 MB.
+Total: 2.883200 ms (FindLiveObjects: 0.294600 ms CreateObjectMapping: 0.205900 ms MarkObjects: 2.314700 ms  DeleteObjects: 0.067400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.006841 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.79 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.214 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1215ms)
+		BeginReloadAssembly (145ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (35ms)
+		EndReloadAssembly (957ms)
+			LoadAssemblies (95ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (291ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (48ms)
+			SetupLoadedEditorAssemblies (427ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (315ms)
+				ProcessInitializeOnLoadMethodAttributes (20ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (16ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.48 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.9 KB). Loaded Objects now: 4595.
+Memory consumption went from 160.9 MB to 160.9 MB.
+Total: 2.880100 ms (FindLiveObjects: 0.303700 ms CreateObjectMapping: 0.233800 ms MarkObjects: 2.269800 ms  DeleteObjects: 0.071700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.011630 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.50 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.238 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1239ms)
+		BeginReloadAssembly (144ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (12ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (33ms)
+		EndReloadAssembly (992ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (283ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (53ms)
+			SetupLoadedEditorAssemblies (446ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (72ms)
+				ProcessInitializeOnLoadAttributes (332ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (17ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.53 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.8 KB). Loaded Objects now: 4598.
+Memory consumption went from 161.1 MB to 161.0 MB.
+Total: 3.417500 ms (FindLiveObjects: 0.358000 ms CreateObjectMapping: 0.194500 ms MarkObjects: 2.798900 ms  DeleteObjects: 0.064600 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008930 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Error loading file Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json. Error: System.IO.IOException: Sharing violation on path C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\StateCache\LayerSettings\9e\9ecc5c3c162a7aba29bafa64c8b94b7c.json
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <00c558282d074245ab3496e2d108079b>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <00c558282d074245ab3496e2d108079b>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,System.IO.FileOptions)
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks, System.Int32 bufferSize) [0x00055] in <00c558282d074245ab3496e2d108079b>:0 
+  at System.IO.StreamReader..ctor (System.String path, System.Text.Encoding encoding, System.Boolean detectEncodingFromByteOrderMarks) [0x00000] in <00c558282d074245ab3496e2d108079b>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.StreamReader..ctor(string,System.Text.Encoding,bool)
+  at System.IO.File.InternalReadAllText (System.String path, System.Text.Encoding encoding) [0x00000] in <00c558282d074245ab3496e2d108079b>:0 
+  at System.IO.File.ReadAllText (System.String path, System.Text.Encoding encoding) [0x00034] in <00c558282d074245ab3496e2d108079b>:0 
+  at UnityEditor.StateCache`1[T].GetState (UnityEngine.Hash128 key, T defaultValue) [0x00041] in <ba030cc3475e41258f58c8c467eb72e2>:0 
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+UnityEditor.StateCache`1<UnityEditor.Tools/LayerSettings>:GetState (UnityEngine.Hash128,UnityEditor.Tools/LayerSettings)
+UnityEditor.Tools:OnEnable ()
+UnityEngine.ScriptableObject:CreateInstance (System.Type)
+UnityEngine.ScriptableObject:CreateInstance<UnityEditor.Tools> ()
+UnityEditor.Tools:get_get ()
+UnityEditor.Tools:get_visibleLayers ()
+UnityEditor.Animations.Rigging.BoneRendererUtils:.cctor () (at Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs:121)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Library/PackageCache/com.unity.animation.rigging@1.1.1/Editor/Utils/BoneRendererUtils.cs Line: 121)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  1.415 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1416ms)
+		BeginReloadAssembly (186ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (13ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (47ms)
+		EndReloadAssembly (1120ms)
+			LoadAssemblies (111ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (334ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (511ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (77ms)
+				ProcessInitializeOnLoadAttributes (391ms)
+				ProcessInitializeOnLoadMethodAttributes (22ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.59 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.8 KB). Loaded Objects now: 4601.
+Memory consumption went from 161.1 MB to 161.0 MB.
+Total: 2.764500 ms (FindLiveObjects: 0.321200 ms CreateObjectMapping: 0.221400 ms MarkObjects: 2.138700 ms  DeleteObjects: 0.082100 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.009610 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.465 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1465ms)
+		BeginReloadAssembly (210ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (13ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (43ms)
+		EndReloadAssembly (1100ms)
+			LoadAssemblies (159ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (375ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (40ms)
+			SetupLoadedEditorAssemblies (474ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (10ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (69ms)
+				ProcessInitializeOnLoadAttributes (350ms)
+				ProcessInitializeOnLoadMethodAttributes (32ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (23ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.52 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.9 KB). Loaded Objects now: 4604.
+Memory consumption went from 161.0 MB to 161.0 MB.
+Total: 3.114400 ms (FindLiveObjects: 0.292700 ms CreateObjectMapping: 0.247800 ms MarkObjects: 2.478300 ms  DeleteObjects: 0.094500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008858 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 1.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.496 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1497ms)
+		BeginReloadAssembly (142ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (34ms)
+		EndReloadAssembly (1260ms)
+			LoadAssemblies (99ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (335ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (69ms)
+			SetupLoadedEditorAssemblies (616ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (1ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (107ms)
+				ProcessInitializeOnLoadAttributes (445ms)
+				ProcessInitializeOnLoadMethodAttributes (41ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (27ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.51 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.9 KB). Loaded Objects now: 4607.
+Memory consumption went from 161.1 MB to 161.1 MB.
+Total: 3.794500 ms (FindLiveObjects: 0.348000 ms CreateObjectMapping: 0.268600 ms MarkObjects: 3.103700 ms  DeleteObjects: 0.073400 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007319 seconds.
+Begin MonoManager ReloadAssembly
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
+Symbol file LoadedFromMemory doesn't match image C:\Users\harofax\Downloads\gamedev\unityprojects\Aquariox-MKX2000\Aquariox-MKX2000\Library\PackageCache\com.unity.visualscripting@1.7.5\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.47 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.251 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1252ms)
+		BeginReloadAssembly (152ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (8ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (36ms)
+		EndReloadAssembly (1010ms)
+			LoadAssemblies (90ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (314ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (46ms)
+			SetupLoadedEditorAssemblies (438ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (1ms)
+				BeforeProcessingInitializeOnLoad (82ms)
+				ProcessInitializeOnLoadAttributes (309ms)
+				ProcessInitializeOnLoadMethodAttributes (26ms)
+				AfterProcessingInitializeOnLoad (9ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (21ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.49 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 3679 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 26 unused Assets / (78.9 KB). Loaded Objects now: 4610.
+Memory consumption went from 161.2 MB to 161.1 MB.
+Total: 3.759400 ms (FindLiveObjects: 0.276300 ms CreateObjectMapping: 0.192100 ms MarkObjects: 3.214400 ms  DeleteObjects: 0.075500 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 

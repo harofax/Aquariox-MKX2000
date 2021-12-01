@@ -317,6 +317,7 @@ GameObject:
   - component: {fileID: 6000901020746753012}
   - component: {fileID: 1256684789}
   - component: {fileID: 537980602642066233}
+  - component: {fileID: 103275133}
   m_Layer: 6
   m_Name: goldfish_prefab
   m_TagString: Untagged
@@ -369,6 +370,24 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.31, y: 1.36, z: 4.79}
   m_Center: {x: 0, y: 0.27, z: 2.08}
+--- !u!114 &103275133
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2757551813506800701}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48547b1cb9245d84392a10dd2aa895ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fishData: {fileID: 11400000, guid: a2a978b9ebcd9304fbc73dc13c1724f8, type: 2}
+  fishType: 1
+  behaviours: []
+  fishLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1001 &2394018961832377914
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -486,6 +505,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 026dce66aee3ab84baadb265899a4604, type: 3}
+--- !u!4 &8248844007570642341 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -3224431766499824737, guid: 026dce66aee3ab84baadb265899a4604, type: 3}
+  m_PrefabInstance: {fileID: 2394018961832377914}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6280287694320736034 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -715698584129902312, guid: 026dce66aee3ab84baadb265899a4604, type: 3}
@@ -519,11 +543,6 @@ GameObject:
 --- !u!4 &697637685794714924 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -6298351936573191402, guid: 026dce66aee3ab84baadb265899a4604, type: 3}
-  m_PrefabInstance: {fileID: 2394018961832377914}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &8248844007570642341 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -3224431766499824737, guid: 026dce66aee3ab84baadb265899a4604, type: 3}
   m_PrefabInstance: {fileID: 2394018961832377914}
   m_PrefabAsset: {fileID: 0}
 --- !u!95 &2394018961832377888
