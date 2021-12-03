@@ -118,12 +118,7 @@ public abstract class FishBase : MonoBehaviour
         {
             Debug.LogError("Fish behaviour is missing", this);
         }
-
-        if (neighbours.Count == 0)
-        {
-            Move(transform.forward * MoveSpeed);
-            return;
-        }
+        
         Vector3 movement = Vector3.zero;
         for (int i = 0; i < behaviours.Length; i++)
         {
