@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -31,20 +32,26 @@ public abstract class FishBase : MonoBehaviour
     [SerializeField]
     private LayerMask fishLayer;
 
+    // ------ AI stuff ------------
     private protected float HungerRate { get; private set; }
     private protected float HappinessModifier { get; private set; }
     private protected float Aggression { get; private set; }
     private protected float MoneyRate { get; private set; }
     private protected int MoneyAmount { get; private set; }
-    private protected float MoveSpeed { get; private set; }
     
+    // ------ movement -----------
+    private protected float MaxSpeed { get; private set; }
+    private protected float MoveSpeed { get; private set; }
     private protected float TurningSpeed { get; private set; }
+    
+    // ------ flocking -----------
     private protected float SightRange { get; private set; }
     private protected int MaxSchoolSize { get; private set; }
     private protected float Intimacy { get; private set; }
 
     private protected Transform CurrentTarget { get; private set; }
     public float SquaredIntimacyDistance => Intimacy * Intimacy;
+    private float SquaredMaxSpeed => MoveSpeed * MoveSpeed;
 
     private FishState currentState;
     
@@ -53,12 +60,14 @@ public abstract class FishBase : MonoBehaviour
     protected List<Transform> neighbours = new List<Transform>();
 
     protected Rigidbody rb;
+    private Collider selfCollider;
 
     private void Awake()
     {
         SetFishData(fishData);
         behaviours = FishManager.Instance.behaviours;
         rb = GetComponent<Rigidbody>();
+        selfCollider = GetComponent<Collider>();
     }
 
     private void OnEnable()
@@ -86,9 +95,13 @@ public abstract class FishBase : MonoBehaviour
             SightRange, neighbourFish,
         fishLayer,
             QueryTriggerInteraction.Collide);
+        
+        if (hits <= 1) {return;}
+        
         for (int i = 0; i < hits; i++)
         {
-            if (neighbourFish[i].transform == this.transform)
+            if (neighbours.Count >= MaxSchoolSize) break;
+            if (ReferenceEquals(neighbourFish[i], selfCollider))
             {
                 continue;
             }
@@ -115,13 +128,17 @@ public abstract class FishBase : MonoBehaviour
         for (int i = 0; i < behaviours.Length; i++)
         {
             Vector3 moveCalc = behaviours[i].CalculateNextMove(this, neighbours);
+            moveCalc *= MoveSpeed;
+
+            if (movement.sqrMagnitude > SquaredMaxSpeed)
+            {
+                movement = movement.normalized * MaxSpeed;
+            }
 
             movement += moveCalc;
         }
 
-        movement = movement.normalized;
-        
-        Move(movement * MoveSpeed);
+        Move(movement);
     }
     
 
@@ -134,13 +151,19 @@ public abstract class FishBase : MonoBehaviour
     {
         Quaternion rot = Quaternion.Slerp(
             transform.rotation,
-            Quaternion.LookRotation(movement),
+            Quaternion.LookRotation(movement, Vector3.up),
             TurningSpeed * Time.fixedDeltaTime);
-        
-        rb.MovePosition(Vector3.MoveTowards(transform.position, transform.position + movement, Time.fixedDeltaTime));
+        //
         rb.MoveRotation(rot);
-        // transform.rotation = Quaternion.LookRotation(movement);
-        // transform.Translate( 0, 0, MoveSpeed * Time.deltaTime);
+        Vector3 moveDelta = Vector3.MoveTowards(transform.position, transform.position + movement, Time.fixedDeltaTime);
+        rb.MovePosition(moveDelta);
+
+        
+        // if (rb.velocity.sqrMagnitude <= SquaredMaxSpeed)
+        // {
+        //     rb.AddForce(transform.forward, ForceMode.Impulse);
+        //     // rb.velocity = rb.velocity.normalized*MaxSpeed;
+        // }
     }
 
     protected void SetFishData(FishData inputData)
@@ -151,7 +174,8 @@ public abstract class FishBase : MonoBehaviour
         MoneyRate = inputData.moneyRate;
         MoneyAmount = inputData.moneyAmount;
         MoveSpeed = Random.Range(1f, inputData.moveSpeed);
-        TurningSpeed = Random.Range(1, inputData.turnSpeed);
+        MaxSpeed = Random.Range(1f, inputData.maxSpeed);
+        TurningSpeed = Random.Range(1f, inputData.turnSpeed);
         MaxSchoolSize = inputData.maxSchoolSize;
         SightRange = inputData.sightRange;
         Intimacy = inputData.intimacy;

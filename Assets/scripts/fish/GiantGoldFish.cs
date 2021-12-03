@@ -12,8 +12,8 @@ public class GiantGoldFish : FishBase
     protected override void FixedUpdate()
     {
         base.FixedUpdate();
-        Vector3 targetDirection = CurrentTarget.position - transform.position;
-        Move(targetDirection.normalized);
+        //Vector3 targetDirection = CurrentTarget.position - transform.position;
+        //Move(targetDirection.normalized);
         
     }
 }

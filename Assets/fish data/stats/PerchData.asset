@@ -18,7 +18,8 @@ MonoBehaviour:
   moneyRate: 87
   moneyAmount: 2
   moveSpeed: 3.13
+  maxSpeed: 2.24
   turnSpeed: 3
-  maxSchoolSize: 6
-  sightRange: 4.28
-  intimacy: 3.2
+  maxSchoolSize: 2
+  sightRange: 3
+  intimacy: 2.1

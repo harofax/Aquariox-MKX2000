@@ -23,15 +23,19 @@ public class FishData : ScriptableObject
     [Range(0.1f, 10f)]
     public float moveSpeed;
 
+    [Range(1f, 5f)]
+    public float maxSpeed;
+    
     [Range(1f, 10f)]
     public float turnSpeed;
 
     [Range(1, 20)]
     public int maxSchoolSize;
 
-    [Range(1f, 10f)]
+    [Range(1f, 5f)]
     public float sightRange;
 
-    [Range(1f, 8f)]
+    [Range(0.4f, 8f)]
     public float intimacy;
+
 }

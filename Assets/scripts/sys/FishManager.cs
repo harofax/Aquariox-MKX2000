@@ -17,9 +17,6 @@ public class FishManager : MonoBehaviour
     [SerializeField]
     private Aquarium aquarium;
 
-    [SerializeField]
-    private Transform playerCursor;
-    
     private static FishManager _instance;
     public static FishManager Instance => _instance;
 
@@ -54,7 +51,6 @@ public class FishManager : MonoBehaviour
             Vector3 pos = aquarium.GetRandomPosition();
             
             FishBase fish = Instantiate(fishies[fishType], pos, startRot);
-            fish.SetTarget(playerCursor);
         }
     }
 

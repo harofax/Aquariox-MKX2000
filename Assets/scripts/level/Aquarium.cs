@@ -9,10 +9,11 @@ public class Aquarium : MonoBehaviour
     [SerializeField]
     private Bounds spawnZone;
 
+    private float buffer = 2f;
     // Start is called before the first frame update
     void Awake()
     {
-
+        spawnZone.center = this.transform.position;
     }
 
     private void Start()
@@ -35,13 +36,15 @@ public class Aquarium : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
+
+        Vector3 centerWorld = transform.position + spawnZone.center;
         
-        Gizmos.DrawWireSphere(spawnZone.center, 0.1f);
-        Gizmos.DrawWireCube(spawnZone.center, spawnZone.extents);
+        Gizmos.DrawWireSphere(centerWorld, 0.1f);
+        Gizmos.DrawWireCube(centerWorld, spawnZone.extents);
         
         Gizmos.color = Color.red;
-        Gizmos.DrawCube(spawnZone.center - (spawnZone.extents / 2), Vector3.one * 0.5f);
+        Gizmos.DrawCube(centerWorld - (spawnZone.extents / 2), Vector3.one * 0.5f);
         Gizmos.color = Color.blue;
-        Gizmos.DrawCube(spawnZone.center + (spawnZone.extents / 2), Vector3.one * 0.5f);
+        Gizmos.DrawCube(centerWorld + (spawnZone.extents / 2), Vector3.one * 0.5f);
     }
 }
