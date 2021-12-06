@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b427386fcd2b24eb4acaf927794894, type: 3}
   m_Name: centered
   m_EditorClassIdentifier: 
-  swimAreaCenter: {x: 0, y: 0, z: 0}
-  maxDistance: 8.56
+  swimAreaCenter: {x: 3.61, y: 0, z: 0}
+  maxDistance: 6.64

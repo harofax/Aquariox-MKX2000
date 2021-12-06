@@ -18,6 +18,7 @@ public class FlockAlignmentBehaviour : FlockBehaviour
         }
         
         flockDirection /= flock.Count;
+        
     
         return flockDirection;
     }

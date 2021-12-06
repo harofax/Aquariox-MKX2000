@@ -8,9 +8,7 @@ public class Aquarium : MonoBehaviour
 {
     [SerializeField]
     private Bounds spawnZone;
-
-    private float buffer = 2f;
-    // Start is called before the first frame update
+    
     void Awake()
     {
         spawnZone.center = this.transform.position;
@@ -18,7 +16,6 @@ public class Aquarium : MonoBehaviour
 
     private void Start()
     {
-        
     }
 
 

@@ -387,6 +387,7 @@ MonoBehaviour:
   fishLayer:
     serializedVersion: 2
     m_Bits: 64
+  smooth: 0.53
 --- !u!1001 &2394018961832377914
 PrefabInstance:
   m_ObjectHideFlags: 0

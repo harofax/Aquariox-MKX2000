@@ -22,7 +22,7 @@ public class FlockGroupingBehaviour : FlockBehaviour
 
         flockCenter -= fish.transform.position;
 
-        flockCenter = Vector3.SmoothDamp(fish.transform.forward, flockCenter, ref currentVelocity, smoothTime);
+        //flockCenter = Vector3.SmoothDamp(fish.transform.forward, flockCenter, ref currentVelocity, smoothTime);
 
         return flockCenter;
     }

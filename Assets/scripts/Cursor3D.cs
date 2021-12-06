@@ -66,7 +66,7 @@ public class Cursor3D : MonoBehaviour
     private bool rightclick;
 
     private CursorState currentState = CursorState.Idle;
-    private AudioSource audio;
+    private AudioSource jukebox;
     
 
     void Start()
@@ -80,7 +80,7 @@ public class Cursor3D : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
-        audio = GetComponent<AudioSource>();
+        jukebox = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -96,7 +96,7 @@ public class Cursor3D : MonoBehaviour
         rightclick = Input.GetKeyDown(KeyCode.Mouse1);
         
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-        if (Input.GetKeyDown(KeyCode.M)) audio.Stop();
+        if (Input.GetKeyDown(KeyCode.M)) jukebox.Stop();
     }
 
     private void SetCursorGraphic()

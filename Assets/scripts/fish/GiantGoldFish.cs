@@ -8,12 +8,4 @@ public class GiantGoldFish : FishBase
     {
         throw new System.NotImplementedException();
     }
-
-    protected override void FixedUpdate()
-    {
-        base.FixedUpdate();
-        //Vector3 targetDirection = CurrentTarget.position - transform.position;
-        //Move(targetDirection.normalized);
-        
-    }
 }

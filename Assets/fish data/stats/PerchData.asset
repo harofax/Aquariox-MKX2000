@@ -17,9 +17,9 @@ MonoBehaviour:
   docileness: 0.8
   moneyRate: 87
   moneyAmount: 2
-  moveSpeed: 3.13
-  maxSpeed: 2.24
+  moveSpeed: 1.42
+  maxSpeed: 7.03
   turnSpeed: 3
   maxSchoolSize: 2
   sightRange: 3
-  intimacy: 2.1
+  intimacy: 3.74

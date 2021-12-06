@@ -14,20 +14,13 @@ public enum FishState
     Dead
 }
 
-public enum FishType
-{
-    Perch,
-    Goldfish,
-    Mullet
-}
-
 public abstract class FishBase : MonoBehaviour
 {
     [SerializeField]
     private FishData fishData;
 
     [SerializeField]
-    private FishType fishType;
+    internal FishType fishType;
 
     [SerializeField]
     private LayerMask fishLayer;
@@ -61,6 +54,9 @@ public abstract class FishBase : MonoBehaviour
 
     protected Rigidbody rb;
     private Collider selfCollider;
+    private Vector3 currentVelocity;
+    [SerializeField]
+    private float smooth;
 
     private void Awake()
     {
@@ -120,6 +116,7 @@ public abstract class FishBase : MonoBehaviour
         }
         
         Vector3 movement = Vector3.zero;
+        
         for (int i = 0; i < behaviours.Length; i++)
         {
             Vector3 moveCalc = behaviours[i].CalculateNextMove(this, neighbours);
@@ -150,13 +147,17 @@ public abstract class FishBase : MonoBehaviour
             TurningSpeed * Time.fixedDeltaTime);
         //
         rb.MoveRotation(rot);
-        Vector3 moveDelta = Vector3.MoveTowards(transform.position, transform.position + movement, Time.fixedDeltaTime);
-        rb.MovePosition(moveDelta);
+        Vector3 moveDelta = Vector3.MoveTowards(transform.position, transform.position + movement, Time.deltaTime);
+        // Vector3.SmoothDamp(transform.position, transform.position + movement, ref currentVelocity, smooth );// 
+        //rb.MovePosition(transform.position + moveDelta * Time.fixedDeltaTime);
+        rb.MovePosition(moveDelta);    
+        //Vector3.SmoothDamp(transform.forward,movement, ref currentVelocity, smooth );
+            //rb.MovePosition(transform.position + moveDelta * Time.fixedDeltaTime);
 
         
         // if (rb.velocity.sqrMagnitude <= SquaredMaxSpeed)
         // {
-        //     rb.AddForce(transform.forward, ForceMode.Impulse);
+        //     rb.AddForce(moveDelta*Time.deltaTime, ForceMode.Impulse);
         //     // rb.velocity = rb.velocity.normalized*MaxSpeed;
         // }
     }
@@ -169,7 +170,7 @@ public abstract class FishBase : MonoBehaviour
         MoneyRate = inputData.moneyRate;
         MoneyAmount = inputData.moneyAmount;
         MoveSpeed = Random.Range(1f, inputData.moveSpeed);
-        MaxSpeed = Random.Range(1f, inputData.maxSpeed);
+        MaxSpeed = Random.Range(MoveSpeed, inputData.maxSpeed);
         TurningSpeed = Random.Range(1f, inputData.turnSpeed);
         MaxSchoolSize = inputData.maxSchoolSize;
         SightRange = inputData.sightRange;
@@ -178,6 +179,9 @@ public abstract class FishBase : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
+        //Move(transform.forward * MoveSpeed);
+        rb.AddForce(transform.forward * MoveSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
         Flock();
+        
     }
 }

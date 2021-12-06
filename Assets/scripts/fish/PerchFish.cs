@@ -8,11 +8,5 @@ public class PerchFish : FishBase
     private protected override void Execute()
     {
     }
-
-   
-
-    private void Update()
-    {
-        
-    }
+    
 }

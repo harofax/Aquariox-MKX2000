@@ -81,6 +81,7 @@ MonoBehaviour:
   fishLayer:
     serializedVersion: 2
     m_Bits: 64
+  smooth: 0.53
 --- !u!1 &5061024880832038365
 GameObject:
   m_ObjectHideFlags: 0

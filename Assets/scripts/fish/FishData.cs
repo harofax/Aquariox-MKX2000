@@ -20,10 +20,10 @@ public class FishData : ScriptableObject
     [Range(1, 10)]
     public int moneyAmount;
 
-    [Range(0.1f, 10f)]
+    [Range(0.1f, 4f)]
     public float moveSpeed;
 
-    [Range(1f, 5f)]
+    [Range(4f, 10f)]
     public float maxSpeed;
     
     [Range(1f, 10f)]
