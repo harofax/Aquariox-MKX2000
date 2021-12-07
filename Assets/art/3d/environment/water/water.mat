@@ -204,16 +204,16 @@ Material:
     - _Glossiness: 1
     - _GlossyReflections: 1
     - _HeightAmplitude: 1.4555999
-    - _HeightCenter: 0.7864111
+    - _HeightCenter: 0.07076117
     - _HeightMapParametrization: 0
     - _HeightMax: 36.39
     - _HeightMin: -109.17
-    - _HeightOffset: -5.3
+    - _HeightOffset: 98.87
     - _HeightPoMAmplitude: 7.45
     - _HeightTessAmplitude: 155.9
     - _HeightTessCenter: 0
     - _InvTilingScale: 1
-    - _Ior: 1.149
+    - _Ior: 1.064
     - _IridescenceMask: 1
     - _IridescenceThickness: 1
     - _LinkDetailsWithBase: 0

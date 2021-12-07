@@ -69,7 +69,7 @@ public abstract class FishBase : MonoBehaviour
     private void OnEnable()
     {
         GameManager.OnSchoolingTick += GetNeighbouringFish;
-        //GameManager.OnTick += Flock;
+        GameManager.OnTick += OnTickMove;
     }
 
     protected void ChangeState(FishState newState)
@@ -101,7 +101,7 @@ public abstract class FishBase : MonoBehaviour
             {
                 continue;
             }
-            Debug.DrawLine(transform.position, neighbourFish[i].transform.position, Color.yellow);
+            //Debug.DrawLine(transform.position, neighbourFish[i].transform.position, Color.yellow);
             neighbours.Add(neighbourFish[i].transform);
         }
     }
@@ -145,21 +145,14 @@ public abstract class FishBase : MonoBehaviour
             transform.rotation,
             Quaternion.LookRotation(movement, Vector3.up),
             TurningSpeed * Time.fixedDeltaTime);
-        //
-        rb.MoveRotation(rot);
-        Vector3 moveDelta = Vector3.MoveTowards(transform.position, transform.position + movement, Time.deltaTime);
-        // Vector3.SmoothDamp(transform.position, transform.position + movement, ref currentVelocity, smooth );// 
-        //rb.MovePosition(transform.position + moveDelta * Time.fixedDeltaTime);
-        rb.MovePosition(moveDelta);    
-        //Vector3.SmoothDamp(transform.forward,movement, ref currentVelocity, smooth );
-            //rb.MovePosition(transform.position + moveDelta * Time.fixedDeltaTime);
-
         
-        // if (rb.velocity.sqrMagnitude <= SquaredMaxSpeed)
-        // {
-        //     rb.AddForce(moveDelta*Time.deltaTime, ForceMode.Impulse);
-        //     // rb.velocity = rb.velocity.normalized*MaxSpeed;
-        // }
+        rb.MoveRotation(rot);
+        Vector3 moveDelta = Vector3.SmoothDamp(transform.forward, movement, ref currentVelocity, smooth );
+
+        if (rb.velocity.sqrMagnitude <= SquaredMaxSpeed)
+        {
+             rb.AddForce(moveDelta*Time.deltaTime, ForceMode.Impulse);
+        }
     }
 
     protected void SetFishData(FishData inputData)
@@ -169,7 +162,7 @@ public abstract class FishBase : MonoBehaviour
         Aggression = inputData.docileness;
         MoneyRate = inputData.moneyRate;
         MoneyAmount = inputData.moneyAmount;
-        MoveSpeed = Random.Range(1f, inputData.moveSpeed);
+        MoveSpeed = Random.Range(MoveSpeed/2, inputData.moveSpeed);
         MaxSpeed = Random.Range(MoveSpeed, inputData.maxSpeed);
         TurningSpeed = Random.Range(1f, inputData.turnSpeed);
         MaxSchoolSize = inputData.maxSchoolSize;
@@ -177,11 +170,13 @@ public abstract class FishBase : MonoBehaviour
         Intimacy = inputData.intimacy;
     }
 
+    private void OnTickMove()
+    {
+        Move((transform.forward + Random.onUnitSphere) * MoveSpeed);
+    }
+
     protected virtual void FixedUpdate()
     {
-        //Move(transform.forward * MoveSpeed);
-        rb.AddForce(transform.forward * MoveSpeed * Time.fixedDeltaTime, ForceMode.Impulse);
         Flock();
-        
     }
 }

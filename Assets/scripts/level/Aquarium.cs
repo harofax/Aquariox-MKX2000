@@ -14,11 +14,6 @@ public class Aquarium : MonoBehaviour
         spawnZone.center = this.transform.position;
     }
 
-    private void Start()
-    {
-    }
-
-
     public Vector3 GetRandomPosition()
     {
         Vector3 minPos = spawnZone.center - spawnZone.extents / 2;

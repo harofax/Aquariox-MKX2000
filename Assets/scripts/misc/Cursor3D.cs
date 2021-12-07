@@ -36,8 +36,6 @@ public class Cursor3D : MonoBehaviour
     
     [SerializeField] 
     private ParticleSystem clickParticles;
-    [SerializeField]
-    private float pokeForce;
 
     [Space(10)]
 
@@ -152,22 +150,8 @@ public class Cursor3D : MonoBehaviour
                 rb.transform.rotation = Quaternion.LookRotation(forceVector, transform.up);
                 rb.AddForceAtPosition(forceVector * explosionForce, hit.point, ForceMode.Impulse);
             }
-            // if (hit.transform.TryGetComponent(out FishBase fish))
-            // {
-            //     hit.rigidbody.AddForce(ray.direction * pokeForce, ForceMode.Impulse);
-            //     clickParticles.Play();
-            //     click = false;
-            // }
+ 
             currentState = CursorState.Click;
-        } else if (rightclick)
-        {
-            if (hit.transform.TryGetComponent(out FishBase fish))
-            {
-                currentState = CursorState.Grab;
-                hit.rigidbody.AddForce(-ray.direction * pokeForce, ForceMode.Impulse);
-            }
-
-            currentState = CursorState.Grab;
         }
         else
         {

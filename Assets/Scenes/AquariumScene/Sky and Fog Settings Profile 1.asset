@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   rotation:
     m_OverrideState: 1
-    m_Value: 237
+    m_Value: 235
   skyIntensityMode:
     m_OverrideState: 1
     m_Value: 2
@@ -154,15 +154,15 @@ MonoBehaviour:
     m_Value: 1
   cloudType:
     m_OverrideState: 0
-    m_Value: 1
+    m_Value: 0
   skyAmbientMode:
-    m_OverrideState: 0
+    m_OverrideState: 1
     m_Value: 1
   windOrientation:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 0
   windSpeed:
-    m_OverrideState: 1
+    m_OverrideState: 0
     m_Value: 100
   fogType:
     m_OverrideState: 1
