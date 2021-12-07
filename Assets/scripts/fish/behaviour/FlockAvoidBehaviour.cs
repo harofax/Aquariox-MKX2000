@@ -14,7 +14,7 @@ public class FlockAvoidBehaviour : FlockBehaviour
         {
             Vector3 distance = (fish.transform.position - neighbourino.position);
             
-            if (distance.sqrMagnitude <= fish.SquaredIntimacyDistance)
+            if (distance.magnitude <= fish.GetIntimacy)
             {
                 avoidVector += distance;
             }

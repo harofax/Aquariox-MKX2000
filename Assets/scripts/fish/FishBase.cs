@@ -43,7 +43,7 @@ public abstract class FishBase : MonoBehaviour
     private protected float Intimacy { get; private set; }
 
     private protected Transform CurrentTarget { get; private set; }
-    public float SquaredIntimacyDistance => Intimacy * Intimacy;
+    public float GetIntimacy => Intimacy;
     private float SquaredMaxSpeed => MoveSpeed * MoveSpeed;
 
     private FishState currentState;
@@ -52,24 +52,33 @@ public abstract class FishBase : MonoBehaviour
     
     protected List<Transform> neighbours = new List<Transform>();
 
-    protected Rigidbody rb;
+    protected Rigidbody fishbody;
     private Collider selfCollider;
     private Vector3 currentVelocity;
     [SerializeField]
     private float smooth;
 
+    private Collider[] neighbourFish;
+
     private void Awake()
     {
         SetFishData(fishData);
         behaviours = FishManager.Instance.behaviours;
-        rb = GetComponent<Rigidbody>();
+        fishbody = GetComponent<Rigidbody>();
         selfCollider = GetComponent<Collider>();
+        neighbourFish = new Collider[MaxSchoolSize];
     }
 
     private void OnEnable()
     {
         GameManager.OnSchoolingTick += GetNeighbouringFish;
         GameManager.OnTick += OnTickMove;
+    }
+
+    private void OnDisable()
+    {
+        GameManager.OnSchoolingTick -= GetNeighbouringFish;
+        GameManager.OnTick -= OnTickMove;
     }
 
     protected void ChangeState(FishState newState)
@@ -85,7 +94,6 @@ public abstract class FishBase : MonoBehaviour
     protected void GetNeighbouringFish()
     {
         neighbours.Clear();
-        Collider[] neighbourFish = new Collider[MaxSchoolSize];
         int hits = Physics.OverlapSphereNonAlloc(
             transform.position, 
             SightRange, neighbourFish,
@@ -146,12 +154,12 @@ public abstract class FishBase : MonoBehaviour
             Quaternion.LookRotation(movement, Vector3.up),
             TurningSpeed * Time.fixedDeltaTime);
         
-        rb.MoveRotation(rot);
+        fishbody.MoveRotation(rot);
         Vector3 moveDelta = Vector3.SmoothDamp(transform.forward, movement, ref currentVelocity, smooth );
 
-        if (rb.velocity.sqrMagnitude <= SquaredMaxSpeed)
+        if (fishbody.velocity.sqrMagnitude <= SquaredMaxSpeed)
         {
-             rb.AddForce(moveDelta*Time.deltaTime, ForceMode.Impulse);
+             fishbody.AddForce(moveDelta*Time.deltaTime, ForceMode.Impulse);
         }
     }
 

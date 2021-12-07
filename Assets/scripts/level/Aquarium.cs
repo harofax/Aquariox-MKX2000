@@ -25,6 +25,7 @@ public class Aquarium : MonoBehaviour
         return new Vector3(x, y, z);
     }
 
+    #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
@@ -39,4 +40,5 @@ public class Aquarium : MonoBehaviour
         Gizmos.color = Color.blue;
         Gizmos.DrawCube(centerWorld + (spawnZone.extents / 2), Vector3.one * 0.5f);
     }
+    #endif
 }
