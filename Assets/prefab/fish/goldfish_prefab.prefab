@@ -387,6 +387,7 @@ MonoBehaviour:
   fishLayer:
     serializedVersion: 2
     m_Bits: 64
+  coin: {fileID: 3555080164106647006, guid: 54169ec58074d6c4a8fb8515ae0167e4, type: 3}
   smooth: 0.53
 --- !u!1001 &2394018961832377914
 PrefabInstance:

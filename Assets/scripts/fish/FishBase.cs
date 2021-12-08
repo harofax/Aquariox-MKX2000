@@ -32,7 +32,11 @@ public abstract class FishBase : MonoBehaviour
     private protected float MoneyRate { get; private set; }
     private protected int MoneyAmount { get; private set; }
     
-    // ------ movement -----------
+    // ------ internal stats -----------
+    public float CurrentHunger { get; set; }
+    public float CurrentHappiness { get; set; }
+
+    // ------ movement -----------------
     private protected float MaxSpeed { get; private set; }
     private protected float MoveSpeed { get; private set; }
     private protected float TurningSpeed { get; private set; }
@@ -73,12 +77,15 @@ public abstract class FishBase : MonoBehaviour
     {
         GameManager.OnSchoolingTick += GetNeighbouringFish;
         GameManager.OnTick += OnTickMove;
+        GameManager.OnTick += Execute;
     }
 
     private void OnDisable()
     {
         GameManager.OnSchoolingTick -= GetNeighbouringFish;
         GameManager.OnTick -= OnTickMove;
+        GameManager.OnTick -= Execute;
+
     }
 
     protected void ChangeState(FishState newState)

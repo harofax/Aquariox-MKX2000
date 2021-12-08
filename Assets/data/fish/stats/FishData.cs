@@ -14,7 +14,7 @@ public class FishData : ScriptableObject
     [Range(0f, 100f), Tooltip("How often the fish takes action")]
     public float docileness;
     
-    [Range(60f, 240f)]
+    [Range(0f, 100f)]
     public float moneyRate;
 
     [Range(1, 10)]

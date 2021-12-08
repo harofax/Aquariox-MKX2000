@@ -18,7 +18,7 @@ public class FlockKeepCentered : FlockBehaviour
             return Vector3.zero;
         }
 
-        return offset * distance;// * distance;
+        return offset * distance * distance;
 
     }
 }

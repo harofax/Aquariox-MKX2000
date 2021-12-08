@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
     [SerializeField, Range(0, 60), Tooltip("Will execute tick every x frames")]
     private int tickRate;
-
+    
     public delegate void FishSchoolTick();
     public static event FishSchoolTick OnSchoolingTick;
 
@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
+
     }
 
     // Update is called once per frame
