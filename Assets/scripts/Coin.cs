@@ -7,7 +7,7 @@ using Random = UnityEngine.Random;
 public class Coin : MonoBehaviour
 {
     [SerializeField]
-    private CoinData coinData;
+    public CoinData coinData;
 
     private int value;
 
@@ -30,4 +30,14 @@ public class Coin : MonoBehaviour
         transform.localScale *= coinData.size;
         value = coinData.coinValue;
     }
+
+    public void SetCoinData(CoinData coinData)
+    {
+        propBlock.SetColor(matColorID, coinData.coinColor);
+        propBlock.SetTexture(matTextureID, coinData.coinTexture);
+        coinRenderer.SetPropertyBlock(propBlock);
+
+        transform.localScale *= coinData.size;
+        value = coinData.coinValue;
+    } 
 }

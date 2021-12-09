@@ -8,9 +8,9 @@ public class GiantGoldFish : FishBase
     
     private protected override void Execute()
     {
-        if (Random.Range(0, 100) < MoneyRate * HappinessModifier)
+        if (Random.Range(0, 10) < MoneyRate * HappinessModifier)
         {
-            //GameObject coin = GameManager.Instance.moneyPool.GetPooledObject();
+            CoinManager.Instance.SpawnCoin(this);
         }
     }
 }

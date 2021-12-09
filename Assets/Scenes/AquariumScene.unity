@@ -530,6 +530,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1486451573}
   - component: {fileID: 1486451572}
+  - component: {fileID: 1486451574}
   m_Layer: 0
   m_Name: CoinManager
   m_TagString: Untagged
@@ -549,10 +550,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a409fdba8b1e9544eb6a1273e02a68ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinTypes: []
+  coinPool: {fileID: 1486451574}
+  coinTypes:
+  - {fileID: 11400000, guid: c305d80b8a96542448efa82a4f67fcf4, type: 2}
+  - {fileID: 11400000, guid: 969c3be61d4d805449a78d8731cac446, type: 2}
+  - {fileID: 11400000, guid: b4c60a9c427c77c48b01d8ec5f58c8d4, type: 2}
+  - {fileID: 11400000, guid: 54e9b5cafe6c156419e77da811dacbce, type: 2}
   fishCoinWeights:
   - fishType: 0
     coinWeightBonus: 
+  dropTable: {fileID: 11400000, guid: 19e53645a290acf4bad2dfc0c96a1327, type: 2}
 --- !u!4 &1486451573
 Transform:
   m_ObjectHideFlags: 0
@@ -568,6 +575,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1486451574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1486451571}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70115bbd7254a43419fb147c3b1e65d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  poolObject: {fileID: 2029736623249063272, guid: 2e64145c7a34fba45af1e9404d95a6a2, type: 3}
+  pool: []
+  poolSize: 20
+  expanding: 0
 --- !u!1 &1781097571
 GameObject:
   m_ObjectHideFlags: 0
@@ -792,13 +815,13 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 858647207434544565, guid: 2e64145c7a34fba45af1e9404d95a6a2, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 6933ffcd8c9d233459f1a982747082bb, type: 2}
     - target: {fileID: 2029736623249063272, guid: 2e64145c7a34fba45af1e9404d95a6a2, type: 3}
       propertyPath: m_Name
       value: coin
+      objectReference: {fileID: 0}
+    - target: {fileID: 2029736623249063272, guid: 2e64145c7a34fba45af1e9404d95a6a2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2029736623249063274, guid: 2e64145c7a34fba45af1e9404d95a6a2, type: 3}
       propertyPath: m_RootOrder
