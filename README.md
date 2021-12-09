@@ -54,3 +54,7 @@ Patterns:
 	-> Used in "GameManager.cs"/"FishBase.cs": 		Game manager counts a given amount of frames before firing off a "OnTick" event as well as a "OnSchoolingTick"
 						   		event, these are spaced out over several frames to lighten the load and prevent spikes. (and to only run expensive
 						   		operations every X frames)
+- Object Pool:
+  	-> Used in "CoinManager.cs":				The CoinManager gameobject has an Object Pool component, that has a flag for if the pool should expand or not.
+								The coins are then initialized according to the coindroptable -- which represents the base droprate for all coins
+
