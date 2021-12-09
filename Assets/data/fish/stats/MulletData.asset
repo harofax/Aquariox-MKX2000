@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hungerRate: 1
   happinessModifier: 1
-  docileness: 1
+  docileness: 71.5
   moneyRate: 60
   moneyAmount: 1
   moveSpeed: 3.55

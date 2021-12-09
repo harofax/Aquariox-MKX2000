@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbac6777844e4244913618e2f6f2407, type: 3}
+  m_Name: goldfish droptable
+  m_EditorClassIdentifier: 
+  normalDropRate: 70
+  rareDropRate: 40
+  epicDropRate: 25
+  legendaryDropRate: 10
+  total: 160
+  drops:
+  - {fileID: 11400000, guid: bd44d48f6aa69d14b844ba5a23c5b58b, type: 2}
+  - {fileID: 11400000, guid: c751154b03f829942856953a3e1950e1, type: 2}
+  - {fileID: 11400000, guid: 69de12b74e5667348ad85911c8c4efea, type: 2}
+  - {fileID: 11400000, guid: 3960b4cef92a16d458d9330cbd936951, type: 2}

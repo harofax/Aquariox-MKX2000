@@ -38,4 +38,17 @@ public class FishData : ScriptableObject
     [Range(0.4f, 8f)]
     public float intimacy;
 
+    public void RandomizeStats(float deviation)
+    {   
+        hungerRate =            Random.Range(hungerRate         /       deviation, hungerRate         *         deviation);
+        happinessModifier =     Random.Range(happinessModifier  /       deviation, happinessModifier  *         deviation);
+        docileness =            Random.Range(docileness         /       deviation, docileness         *         deviation);
+        moneyRate =             Random.Range(moneyRate          /       deviation, moneyRate          *         deviation);
+        moveSpeed =             Random.Range(moveSpeed          /       deviation, moveSpeed          *         deviation);
+        maxSpeed =              Random.Range(maxSpeed           /       deviation, maxSpeed           *         deviation);
+        turnSpeed =             Random.Range(turnSpeed          /       deviation, turnSpeed          *         deviation);
+        sightRange =            Random.Range(sightRange         /       deviation, sightRange         *         deviation);
+        intimacy =              Random.Range(intimacy           /       deviation, intimacy           *         deviation);
+    }
+
 }

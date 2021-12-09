@@ -17,7 +17,13 @@ public enum FishState
 public abstract class FishBase : MonoBehaviour
 {
     [SerializeField]
-    private FishData fishData;
+    private FishData fishStats;
+
+    public FishData FishStats
+    {
+        get => fishStats;
+        set => fishStats = value;
+    }
 
     [SerializeField]
     internal FishType fishType;
@@ -66,7 +72,7 @@ public abstract class FishBase : MonoBehaviour
 
     private void Awake()
     {
-        SetFishData(fishData);
+        SetFishData(fishStats);
         behaviours = FishManager.Instance.behaviours;
         fishbody = GetComponent<Rigidbody>();
         selfCollider = GetComponent<Collider>();
@@ -170,7 +176,7 @@ public abstract class FishBase : MonoBehaviour
         }
     }
 
-    protected void SetFishData(FishData inputData)
+    public void SetFishData(FishData inputData)
     {
         HungerRate = inputData.hungerRate;
         HappinessModifier = inputData.happinessModifier;

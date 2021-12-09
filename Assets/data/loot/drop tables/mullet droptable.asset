@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbac6777844e4244913618e2f6f2407, type: 3}
+  m_Name: mullet droptable
+  m_EditorClassIdentifier: 
+  normalDropRate: 100
+  rareDropRate: 40
+  epicDropRate: 30
+  legendaryDropRate: 10
+  total: 180
+  drops:
+  - {fileID: 11400000, guid: bc06c0ddbe5e43b44bfea4b0553193b2, type: 2}
+  - {fileID: 11400000, guid: 7276f00e71c122c43b23a2e162e18723, type: 2}
+  - {fileID: 11400000, guid: 2de3e4cbb7b89b842bc1764011f7cf54, type: 2}
+  - {fileID: 11400000, guid: b3c300d0d0d8f98459266db4f4d427fc, type: 2}

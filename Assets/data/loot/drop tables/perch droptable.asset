@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ddbac6777844e4244913618e2f6f2407, type: 3}
+  m_Name: perch droptable
+  m_EditorClassIdentifier: 
+  normalDropRate: 100
+  rareDropRate: 40
+  epicDropRate: 30
+  legendaryDropRate: 10
+  total: 180
+  drops:
+  - {fileID: 11400000, guid: a07bebd3fc488b247aceb211366406d6, type: 2}
+  - {fileID: 11400000, guid: 2cf3ad6cd8c162c49ae8d193349ceee2, type: 2}
+  - {fileID: 11400000, guid: 845529491fbf57c499fbc2a9fe1cdf66, type: 2}
+  - {fileID: 11400000, guid: 3a5711f262ac57d4197602e2ced663ed, type: 2}

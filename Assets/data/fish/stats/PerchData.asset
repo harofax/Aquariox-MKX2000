@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: PerchData
   m_EditorClassIdentifier: 
   hungerRate: 1.013
-  happinessModifier: 0.708
-  docileness: 0.8
+  happinessModifier: 0.854
+  docileness: 50.7
   moneyRate: 87
   moneyAmount: 2
   moveSpeed: 2.38

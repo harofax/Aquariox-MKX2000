@@ -10,7 +10,7 @@ public class GiantGoldFish : FishBase
     {
         if (Random.Range(0, 10) < MoneyRate * HappinessModifier)
         {
-            CoinManager.Instance.SpawnCoin(this);
+            LootManager.Instance.SpawnDrop(this);
         }
     }
 }

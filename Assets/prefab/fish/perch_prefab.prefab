@@ -668,12 +668,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a2dba3802b7d9ef439c5669dd04bdd18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fishData: {fileID: 11400000, guid: 0bf172fcb65d1cd4cb23e7d3245caa52, type: 2}
+  fishStats: {fileID: 11400000, guid: 0bf172fcb65d1cd4cb23e7d3245caa52, type: 2}
   fishType: 0
   fishLayer:
     serializedVersion: 2
     m_Bits: 64
-  coin: {fileID: 3555080164106647006, guid: 54169ec58074d6c4a8fb8515ae0167e4, type: 3}
   smooth: 0.53
 --- !u!1 &6413939732724487037
 GameObject:
