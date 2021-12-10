@@ -33,12 +33,13 @@ public class LootManager : MonoBehaviour
 
     [SerializeField]
     private FoodData storeFood;
+    
+    [SerializeField]
+    public int buyFoodCost = 30;
 
     private Dictionary<FishType, DropTable> fishDropTables;
 
     private static LootManager _instance;
-    [SerializeField]
-    public int buyFoodCost = 30;
     public static LootManager Instance => _instance;
     
     // Start is called before the first frame update

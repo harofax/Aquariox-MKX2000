@@ -65,8 +65,6 @@ public class Cursor3D : MonoBehaviour
     private bool rightclick;
 
     private CursorState currentState = CursorState.Idle;
-    private AudioSource jukebox;
-    
 
     void Start()
     {
@@ -79,7 +77,6 @@ public class Cursor3D : MonoBehaviour
 
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Confined;
-        jukebox = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -95,7 +92,7 @@ public class Cursor3D : MonoBehaviour
         rightclick = Input.GetKeyDown(KeyCode.Mouse1);
         
         if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-        if (Input.GetKeyDown(KeyCode.M)) jukebox.Stop();
+
     }
 
     private void SetCursorGraphic()
@@ -158,6 +155,7 @@ public class Cursor3D : MonoBehaviour
                 if (explosionColliders[i].TryGetComponent(out Coin coin))
                 {
                     GameManager.Instance.addMoney(coin.Value);
+                    AudioManager.Instance.PlayCoinSFX();
                     coin.ReturnToPool();
                 }
             }
