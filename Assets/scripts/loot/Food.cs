@@ -6,8 +6,8 @@ public class Food : Loot
 {
     private FoodData foodData;
 
-    private float happinessBonus;
-    private float hungerFill;
+    public float happinessBonus;
+    public float hungerFill;
 
     public override void SetLootData(LootData data)
     {

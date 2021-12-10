@@ -6,6 +6,7 @@ using UnityEngine;
 public class GiantGoldFish : FishBase
 {
     
+    
     private protected override void Execute()
     {
         var lootRoll = Random.Range(0, 100);

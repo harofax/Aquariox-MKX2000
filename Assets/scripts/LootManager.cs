@@ -38,6 +38,9 @@ public class LootManager : MonoBehaviour
     public int buyFoodCost = 30;
 
     private Dictionary<FishType, DropTable> fishDropTables;
+    
+    public delegate void FoodDropped(Transform food);
+    public static event FoodDropped OnFoodDropped;
 
     private static LootManager _instance;
     public static LootManager Instance => _instance;
@@ -93,5 +96,6 @@ public class LootManager : MonoBehaviour
         food.transform.rotation = Random.rotation;
         
         food.Initiate();
+        OnFoodDropped?.Invoke(food.transform);
     }
 }

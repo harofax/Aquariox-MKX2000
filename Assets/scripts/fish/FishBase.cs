@@ -57,8 +57,8 @@ public abstract class FishBase : MonoBehaviour
     private float SquaredMaxSpeed => MoveSpeed * MoveSpeed;
 
     private FishState currentState;
-    
-    private FlockBehaviour[] behaviours;
+
+    protected FlockBehaviour[] behaviours;
     
     protected List<Transform> neighbours = new List<Transform>();
 
@@ -77,6 +77,8 @@ public abstract class FishBase : MonoBehaviour
         fishbody = GetComponent<Rigidbody>();
         selfCollider = GetComponent<Collider>();
         neighbourFish = new Collider[MaxSchoolSize];
+
+        CurrentHunger = 50;
     }
 
     private void OnEnable()
@@ -84,6 +86,8 @@ public abstract class FishBase : MonoBehaviour
         GameManager.OnSchoolingTick += GetNeighbouringFish;
         GameManager.OnTick += OnTickMove;
         GameManager.OnTick += Execute;
+        LootManager.OnFoodDropped += SetFoodTarget;
+        GameManager.OnSlowTick += OnTickHunger;
     }
 
     private void OnDisable()
@@ -91,7 +95,13 @@ public abstract class FishBase : MonoBehaviour
         GameManager.OnSchoolingTick -= GetNeighbouringFish;
         GameManager.OnTick -= OnTickMove;
         GameManager.OnTick -= Execute;
+        LootManager.OnFoodDropped -= SetFoodTarget;
 
+    }
+
+    private void SetFoodTarget(Transform foodTarget)
+    {
+        SetTarget(foodTarget);
     }
 
     protected void ChangeState(FishState newState)
@@ -193,7 +203,39 @@ public abstract class FishBase : MonoBehaviour
 
     private void OnTickMove()
     {
-        Move((transform.forward + Random.onUnitSphere) * MoveSpeed);
+        if (CurrentTarget != null)
+        {
+            Move((CurrentTarget.position - transform.position) * MoveSpeed);
+        }
+        else
+        {
+            Move((transform.forward + Random.onUnitSphere) * MoveSpeed);
+        }
+    }
+
+    private void OnTickHunger()
+    {
+        CurrentHunger -= Random.value * HungerRate;
+        if (CurrentHunger < 20)
+        {
+            currentState = FishState.Hungry;
+        }
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.transform.TryGetComponent(out Food food))
+        {
+            CurrentHunger += food.hungerFill;
+            CurrentHappiness += food.happinessBonus;
+
+            if (CurrentHunger > 20)
+            {
+                currentState = FishState.Idle;
+            }
+            
+            food.ReturnToPool();
+        }
     }
 
     protected virtual void FixedUpdate()

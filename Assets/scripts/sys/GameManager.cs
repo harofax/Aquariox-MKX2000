@@ -27,11 +27,14 @@ public class GameManager : MonoBehaviour
 
     public delegate void Tick();
     public static event Tick OnTick;
-    
+
+    public delegate void SlowTick();
+    public static event SlowTick OnSlowTick;
     
     private static GameManager _instance;
     public static GameManager Instance => _instance;
     
+
     void Awake()
     {
         if (_instance != null && _instance != this)
@@ -55,6 +58,7 @@ public class GameManager : MonoBehaviour
         if (PlayerPrefs.HasKey("SavedMoney"))
         {
             money = PlayerPrefs.GetInt("SavedMoney");
+            OnMoneyChanged?.Invoke(money);
         }
 
         if (PlayerPrefs.HasKey("SavedFish"))
@@ -87,6 +91,11 @@ public class GameManager : MonoBehaviour
         if (Time.frameCount % tickRate == 0)
         {
             OnTick?.Invoke();
+        }
+
+        if (Time.frameCount % tickRate * 2 == 0)
+        {
+            OnSlowTick?.Invoke();
         }
 
         if (Time.frameCount % fishNeighbourUpdateRate == 0)
