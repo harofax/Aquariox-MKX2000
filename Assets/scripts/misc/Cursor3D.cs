@@ -56,6 +56,7 @@ public class Cursor3D : MonoBehaviour
 
     private const int InteractableLayerMask = 1 << 6;
     private const int TerrainLayerMask = 1 << 7;
+    private const int LootLayerMask = 1 << 8;
     
     private int combinedLayerMask;
     private int currentLayerMask;
@@ -69,7 +70,7 @@ public class Cursor3D : MonoBehaviour
 
     void Start()
     {
-        combinedLayerMask = InteractableLayerMask | TerrainLayerMask;
+        combinedLayerMask = InteractableLayerMask | TerrainLayerMask | LootLayerMask;
         currentLayerMask = combinedLayerMask;
         
         cam = Camera.main;
@@ -140,22 +141,31 @@ public class Cursor3D : MonoBehaviour
         {
             clickParticles.Play();
             click = false;
+            
             Collider[] explosionColliders = new Collider[explosionMax];
-            int hits = Physics.OverlapSphereNonAlloc(hit.point, explosionRadius, explosionColliders, InteractableLayerMask);
+            int hits = Physics.OverlapSphereNonAlloc(hit.point, explosionRadius, explosionColliders, InteractableLayerMask | LootLayerMask);
 
             for (int i = 0; i < hits; i++)
             {
-                var rb = explosionColliders[i].attachedRigidbody;
-                Vector3 forceVector = (rb.position - hit.point).normalized;
-                rb.transform.rotation = Quaternion.LookRotation(forceVector, transform.up);
-                rb.AddForceAtPosition(forceVector * explosionForce, hit.point, ForceMode.Impulse);
+                if (explosionColliders[i].TryGetComponent(out FishBase fb))
+                {
+                    var rb = explosionColliders[i].attachedRigidbody;
+                    Vector3 forceVector = (rb.position - hit.point).normalized;
+                    rb.transform.rotation = Quaternion.LookRotation(forceVector, transform.up);
+                    rb.AddForceAtPosition(forceVector * explosionForce, hit.point, ForceMode.Impulse);
+                    continue;
+                } 
+                if (explosionColliders[i].TryGetComponent(out Coin coin))
+                {
+                    GameManager.Instance.addMoney(coin.Value);
+                    coin.ReturnToPool();
+                }
             }
  
-            currentState = CursorState.Click;
+            
         }
         else
         {
-            currentState = CursorState.Idle;
         }
 
         cursor.transform.position = hit.point;

@@ -3,15 +3,23 @@ using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
 
-public abstract class Loot<TLootData> : MonoBehaviour where TLootData : LootData
+public abstract class Loot : MonoBehaviour
 {
-    protected TLootData lootData;
+    private Vector3 defaultScale;
 
-    public void SetLootData(TLootData data)
+    public void SetDefaultScale(Vector3 scale)
     {
-        lootData = data;
+        defaultScale = scale;
     }
+
+    public abstract void SetLootData(LootData data);
     public abstract void Initiate();
+
+    public void ReturnToPool()
+    {
+        this.gameObject.SetActive(false);
+        transform.localScale = defaultScale;
+    }
 }
 public interface ILootData
 {

@@ -2,22 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Food : Loot<FoodData>, ILoot
+public class Food : Loot
 {
-    // [SerializeField]
     private FoodData foodData;
 
     private float happinessBonus;
     private float hungerFill;
 
-    public void SetLootData(FoodData data)
+    public override void SetLootData(LootData data)
     {
-        foodData = data;
+        foodData = (FoodData)data;
     }
-
+    
     public override void Initiate()
     {
-        happinessBonus = lootData.happinessBonus;
-        hungerFill = lootData.hungerFill;
+        happinessBonus = foodData.happinessBonus;
+        hungerFill = foodData.hungerFill;
     }
 }

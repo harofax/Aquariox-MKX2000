@@ -4,34 +4,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class Coin : Loot<CoinData>, ILoot
+public class Coin : Loot
 {
+    [SerializeField]
+    private Renderer coinRenderer;
+    
     private CoinData coinData;
     private int value;
     public int Value => value;
     
     private MaterialPropertyBlock propBlock;
-    private Renderer coinRenderer;
     private static readonly int matColorID = Shader.PropertyToID("_BaseColor");
     private static readonly int matTextureID = Shader.PropertyToID("_BaseColorMap");
     
-    private void Start()
+    private void Awake()
     {
-        coinRenderer = GetComponentInChildren<MeshRenderer>();
+        propBlock = new MaterialPropertyBlock();
     }
 
-    public void SetLootData(ILootData data)
+    public override void SetLootData(LootData data)
     {
         coinData = (CoinData)data;
     }
 
     public override void Initiate()
     {
-        propBlock.SetColor(matColorID, lootData.coinColor);
-        propBlock.SetTexture(matTextureID, lootData.coinTexture);
+        propBlock.SetColor(matColorID, coinData.coinColor);
+        propBlock.SetTexture(matTextureID, coinData.coinTexture);
         coinRenderer.SetPropertyBlock(propBlock);
 
-        transform.localScale *= lootData.size;
-        value = lootData.coinValue;
+        transform.localScale *= coinData.size;
+        value = coinData.coinValue;
     }
 }

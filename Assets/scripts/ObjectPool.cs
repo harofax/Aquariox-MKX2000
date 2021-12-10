@@ -12,7 +12,7 @@ public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
     public bool expanding;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         pool = new List<T>();
         for (int i = 0; i < poolSize; i++)
@@ -21,6 +21,7 @@ public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
             obj.gameObject.SetActive(false);
             pool.Add(obj);
         }
+        
     }
 
     public T GetPooledObject()
@@ -37,7 +38,7 @@ public class ObjectPool<T> : MonoBehaviour where T : MonoBehaviour
         if (expanding)
         {
             T obj = Instantiate(poolObject);
-            obj.gameObject.SetActive(false);
+            obj.gameObject.SetActive(true);
             pool.Add(obj);
             return obj;
         }

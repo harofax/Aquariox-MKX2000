@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,11 +9,8 @@ public class LootTaxi : MonoBehaviour
     private ObjectPool<Coin> coinPool;
 
     [SerializeField]
-    private ObjectPool<FishBaby> fishPool;
-
-    [SerializeField]
     private ObjectPool<Food> foodPool;
-    
+
 
     private static LootTaxi _instance;
     public static LootTaxi Instance => _instance;
@@ -30,19 +28,28 @@ public class LootTaxi : MonoBehaviour
         }
     }
 
-    public GameObject GetPooledObjectOfType(LootData dropType)
+    private void Start()
     {
-        switch (dropType)
+        SetDefaultScales(coinPool);
+        SetDefaultScales(foodPool);
+    }
+
+    private void SetDefaultScales<T>(ObjectPool<T> OPool) where T : Loot
+    {
+        foreach (var lootItem in OPool.pool)
         {
-            case CoinData:
-                return coinPool.GetPooledObject().gameObject;
-            case FoodData:
-                return foodPool.GetPooledObject().gameObject;
-            case FishData:
-                return fishPool.GetPooledObject().gameObject;
-            default:
-                return null;
+            lootItem.SetDefaultScale(lootItem.transform.localScale);
         }
+    }
+
+    public Loot GetPooledLootOfType(LootData dropType)
+    {
+        return dropType switch
+        {
+            CoinData => coinPool.GetPooledObject(),
+            FoodData => foodPool.GetPooledObject(),
+            _ => null
+        };
     }
 
     public Coin GetPooledCoin()
@@ -53,10 +60,5 @@ public class LootTaxi : MonoBehaviour
     public Food GetPooledFood()
     {
         return foodPool.GetPooledObject();
-    }
-
-    public FishBaby GetPooledFish()
-    {
-        return fishPool.GetPooledObject();
     }
 }

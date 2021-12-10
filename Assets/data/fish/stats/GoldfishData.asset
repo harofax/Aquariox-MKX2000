@@ -15,7 +15,7 @@ MonoBehaviour:
   hungerRate: 2
   happinessModifier: 2
   docileness: 36.3
-  moneyRate: 93.1
+  moneyRate: 61.4
   moneyAmount: 3
   moveSpeed: 2.07
   maxSpeed: 6.6

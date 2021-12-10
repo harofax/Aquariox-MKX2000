@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [CreateAssetMenu(menuName = "Fish/Fish Data")]
 public class FishData : LootData
@@ -14,11 +15,13 @@ public class FishData : LootData
     [Range(0f, 100f), Tooltip("How often the fish takes action")]
     public float docileness;
     
+    [FormerlySerializedAs("moneyRate")]
     [Range(0f, 100f)]
-    public float moneyRate;
+    public float LootRate;
 
+    [FormerlySerializedAs("moneyAmount")]
     [Range(1, 10)]
-    public int moneyAmount;
+    public int LootBonus;
 
     [Range(0.1f, 4f)]
     public float moveSpeed;
@@ -43,7 +46,7 @@ public class FishData : LootData
         hungerRate =            Random.Range(hungerRate         /       deviation, hungerRate         *         deviation);
         happinessModifier =     Random.Range(happinessModifier  /       deviation, happinessModifier  *         deviation);
         docileness =            Random.Range(docileness         /       deviation, docileness         *         deviation);
-        moneyRate =             Random.Range(moneyRate          /       deviation, moneyRate          *         deviation);
+        LootRate =             Random.Range(LootRate          /       deviation, LootRate          *         deviation);
         moveSpeed =             Random.Range(moveSpeed          /       deviation, moveSpeed          *         deviation);
         maxSpeed =              Random.Range(maxSpeed           /       deviation, maxSpeed           *         deviation);
         turnSpeed =             Random.Range(turnSpeed          /       deviation, turnSpeed          *         deviation);

@@ -35,8 +35,8 @@ public abstract class FishBase : MonoBehaviour
     private protected float HungerRate { get; private set; }
     private protected float HappinessModifier { get; private set; }
     private protected float Aggression { get; private set; }
-    private protected float MoneyRate { get; private set; }
-    private protected int MoneyAmount { get; private set; }
+    private protected float LootRate { get; private set; }
+    private protected int LootBonus { get; private set; }
     
     // ------ internal stats -----------
     public float CurrentHunger { get; set; }
@@ -181,8 +181,8 @@ public abstract class FishBase : MonoBehaviour
         HungerRate = inputData.hungerRate;
         HappinessModifier = inputData.happinessModifier;
         Aggression = inputData.docileness;
-        MoneyRate = inputData.moneyRate;
-        MoneyAmount = inputData.moneyAmount;
+        LootRate = inputData.LootRate;
+        LootBonus = inputData.LootBonus;
         MoveSpeed = Random.Range(MoveSpeed/2, inputData.moveSpeed);
         MaxSpeed = Random.Range(MoveSpeed, inputData.maxSpeed);
         TurningSpeed = Random.Range(1f, inputData.turnSpeed);

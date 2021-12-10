@@ -4,7 +4,8 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class FishBaby : Loot<FishData>, ILoot
+[RequireComponent(typeof(FishBase))]
+public class FishBaby : MonoBehaviour
 {
     [SerializeField]
     private float growTime;
@@ -14,12 +15,7 @@ public class FishBaby : Loot<FishData>, ILoot
 
     private Vector3 grownScale;
 
-    public void SetLootData(ILootData data)
-    {
-        throw new System.NotImplementedException();
-    }
-
-    public override void Initiate()
+    public void InitBaby()
     {
         attachedFish = GetComponent<FishBase>();
         FishData parentData = attachedFish.FishStats;
@@ -32,7 +28,7 @@ public class FishBaby : Loot<FishData>, ILoot
         growTime = Random.Range(growTime / 2, growTime * 2);
 
         Vector3 localScale = transform.localScale;
-        grownScale = localScale + localScale / Random.value;
+        grownScale = localScale + localScale * Random.value;
         localScale *= 0.5f;
         transform.localScale = localScale;
 

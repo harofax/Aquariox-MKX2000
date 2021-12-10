@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 2029736623249063275}
   - component: {fileID: 1696502212}
   - component: {fileID: 1696502211}
-  m_Layer: 0
-  m_Name: medium coin
+  m_Layer: 8
+  m_Name: coin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f12cf4e420f5f74789cd4a3f12a9e6a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coinData: {fileID: 11400000, guid: c305d80b8a96542448efa82a4f67fcf4, type: 2}
+  coinRenderer: {fileID: 858647207434544565}
 --- !u!54 &1696502212
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -136,10 +136,19 @@ PrefabInstance:
       propertyPath: m_Name
       value: coin_mesh
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8cdd78b2e7da91f4f96c6a8c188712be, type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8cdd78b2e7da91f4f96c6a8c188712be, type: 3}
 --- !u!4 &1991061391504285402 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 8cdd78b2e7da91f4f96c6a8c188712be, type: 3}
+  m_PrefabInstance: {fileID: 2029736622037596465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &858647207434544565 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 8cdd78b2e7da91f4f96c6a8c188712be, type: 3}
   m_PrefabInstance: {fileID: 2029736622037596465}
   m_PrefabAsset: {fileID: 0}

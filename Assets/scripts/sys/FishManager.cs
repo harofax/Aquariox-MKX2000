@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -9,7 +10,7 @@ public enum FishType
 {
     Perch,
     Goldfish,
-    Mullet
+    Mullet,
 }
 public class FishManager : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class FishManager : MonoBehaviour
     [SerializeField]
     private FishBase[] fishies;
 
+    public int fishCost = 40;
 
     [SerializeField]
     internal FlockBehaviour[] behaviours;
@@ -27,6 +29,10 @@ public class FishManager : MonoBehaviour
     private FishType[] fishTypes;
     private Dictionary<FishType, FishBase> fishDatabase = new Dictionary<FishType, FishBase>();
 
+    private int fishCount;
+    
+    public delegate void FishChanged(int value);
+    public static event FishChanged OnFishCountChanged;
 
     private static FishManager _instance;
     public static FishManager Instance => _instance;
@@ -59,20 +65,6 @@ public class FishManager : MonoBehaviour
         {
             FishType randomFishType = GetRandomFishType();
             SpawnNewFish(randomFishType);
-            // int fishType = Random.Range(0, fishies.Length);
-            //
-            // Quaternion startRot = Quaternion.identity;
-            //
-            // // coinflip to rotate the other way
-            // startRot.eulerAngles = Random.Range(0, 2) == 0 ? 
-            //     startRot.eulerAngles + 180f * Vector3.up :
-            //     startRot.eulerAngles;
-            //
-            // startRot.eulerAngles = Random.insideUnitCircle;
-            //
-            // Vector3 pos = aquarium.GetRandomPosition();
-            //
-            // FishBase fish = Instantiate(fishies[fishType], pos, startRot);
         }
     }
 
@@ -82,12 +74,30 @@ public class FishManager : MonoBehaviour
         return fishTypes[randomFishType];
     }
 
-    protected void SpawnNewFish(FishType type)
+    protected FishBase SpawnNewFish(FishType type)
     {
-        Quaternion startRot = Quaternion.Euler(0f, Random.Range(0f, 360f), 0f);
+        Quaternion startRot = Random.rotation;
         Vector3 startPos = aquarium.GetRandomPosition();
 
         FishBase fish = Instantiate(fishDatabase[type], startPos, startRot);
+        fishCount++;
+        OnFishCountChanged?.Invoke(fishCount);
+
+        return fish;
+    }
+
+    public void BuyFish()
+    {
+        if (GameManager.Instance.Money < fishCost)
+        {
+            return;
+        }
+        // :^)
+        GameManager.Instance.addMoney(-fishCost);
+
+        FishBaby baby = SpawnNewFish(GetRandomFishType()).AddComponent<FishBaby>();
+        baby.InitBaby();
+        
     }
 
     // Update is called once per frame

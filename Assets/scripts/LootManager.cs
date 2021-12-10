@@ -5,14 +5,8 @@ using Unity.VisualScripting;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public enum CoinType
-{
-    Small,
-    Medium,
-    Large,
-    Rare,
-}
-[System.Serializable]
+
+[Serializable]
 struct FishDropTable
 {
     [SerializeField]
@@ -34,9 +28,17 @@ public class LootManager : MonoBehaviour
    [SerializeField]
     private FishDropTable[] fishDropTableData;
 
+    [SerializeField]
+    private Aquarium aquarium;
+
+    [SerializeField]
+    private FoodData storeFood;
+
     private Dictionary<FishType, DropTable> fishDropTables;
 
     private static LootManager _instance;
+    [SerializeField]
+    public int buyFoodCost = 30;
     public static LootManager Instance => _instance;
     
     // Start is called before the first frame update
@@ -51,6 +53,8 @@ public class LootManager : MonoBehaviour
             _instance = this;
         }
 
+        fishDropTables = new Dictionary<FishType, DropTable>();
+
         foreach (FishDropTable tableData in fishDropTableData)
         {
             fishDropTables[tableData.Type] = tableData.DropTable;
@@ -64,13 +68,29 @@ public class LootManager : MonoBehaviour
 
         LootData dropData = dropTable.GetRandomDrop();
 
-        var drop = LootTaxi.Instance.GetPooledObjectOfType(dropData).GetComponent<Loot<LootData>>();
-
+        var drop = LootTaxi.Instance.GetPooledLootOfType(dropData);
+        
+        if (drop == null) return;
+        
         drop.transform.position = fish.transform.position;
         drop.transform.rotation = Random.rotation;
 
         drop.SetLootData(dropData);
 
         drop.Initiate();
+    }
+
+    public void BuyFood()
+    {
+        if (GameManager.Instance.Money < buyFoodCost) return;
+        // :^)
+        GameManager.Instance.addMoney(-buyFoodCost);
+        var food = LootTaxi.Instance.GetPooledFood();
+        food.SetLootData(storeFood);
+
+        food.transform.position = aquarium.GetRandomPosition();
+        food.transform.rotation = Random.rotation;
+        
+        food.Initiate();
     }
 }

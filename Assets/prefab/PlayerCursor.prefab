@@ -56,8 +56,7 @@ MonoBehaviour:
   rotationSpeed: 8
   rotationVectorOrigin: {fileID: 0}
   clickParticles: {fileID: 429101039678214473}
-  pokeForce: 17.66
-  pokeAnimationDuration: 1
+  pokeAnimationDuration: 0.22
   explosionMax: 10
   explosionRadius: 3
   explosionForce: 2
