@@ -12,6 +12,7 @@ public class LootTaxi : MonoBehaviour
 
     [SerializeField]
     private ObjectPool<Food> foodPool;
+    
 
     private static LootTaxi _instance;
     public static LootTaxi Instance => _instance;
@@ -29,18 +30,33 @@ public class LootTaxi : MonoBehaviour
         }
     }
 
-    public Loot GetPooledObjectOfType(Loot dropType)
+    public GameObject GetPooledObjectOfType(LootData dropType)
     {
         switch (dropType)
         {
-            case Coin:
-                return coinPool.GetPooledObject();
-            case Food:
-                return foodPool.GetPooledObject();
-            case FishBaby:
-                return fishPool.GetPooledObject();
+            case CoinData:
+                return coinPool.GetPooledObject().gameObject;
+            case FoodData:
+                return foodPool.GetPooledObject().gameObject;
+            case FishData:
+                return fishPool.GetPooledObject().gameObject;
             default:
                 return null;
         }
+    }
+
+    public Coin GetPooledCoin()
+    {
+        return coinPool.GetPooledObject();
+    }
+
+    public Food GetPooledFood()
+    {
+        return foodPool.GetPooledObject();
+    }
+
+    public FishBaby GetPooledFish()
+    {
+        return fishPool.GetPooledObject();
     }
 }

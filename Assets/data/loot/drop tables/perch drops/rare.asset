@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: rare
   m_EditorClassIdentifier: 
   drops:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 969c3be61d4d805449a78d8731cac446, type: 2}
+  - {fileID: 11400000, guid: 393a083743d8dc847bd024fb2e2c7c31, type: 2}
+  - {fileID: 11400000, guid: 0bf172fcb65d1cd4cb23e7d3245caa52, type: 2}

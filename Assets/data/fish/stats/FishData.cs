@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Fish/Fish Data")]
-public class FishData : ScriptableObject
+public class FishData : LootData
 {
     [Range(0.3f, 2.0f)]
     public float hungerRate;

@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: epic
   m_EditorClassIdentifier: 
   drops:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b4c60a9c427c77c48b01d8ec5f58c8d4, type: 2}

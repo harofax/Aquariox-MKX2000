@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb18a00e6efc3a043a4dbd3910089e62, type: 3}
-  m_Name: epic
+  m_Script: {fileID: 11500000, guid: cdde1f9d272c18249b6b53c967ab1a18, type: 3}
+  m_Name: pill
   m_EditorClassIdentifier: 
-  drops:
-  - {fileID: 11400000, guid: 969c3be61d4d805449a78d8731cac446, type: 2}
-  - {fileID: 11400000, guid: b4c60a9c427c77c48b01d8ec5f58c8d4, type: 2}
+  happinessBonus: 2.06
+  hungerFill: 14.5

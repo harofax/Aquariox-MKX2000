@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Loot/Coin Data")]
-public class CoinData : ScriptableObject
+public class CoinData : LootData
 {
     public Texture coinTexture;
     public Color coinColor;

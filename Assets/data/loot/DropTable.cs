@@ -31,7 +31,7 @@ public class DropTable : ScriptableObject
         total = normalDropRate + rareDropRate + epicDropRate + legendaryDropRate;
     }
 
-    public Loot GetRandomDrop()
+    public LootData GetRandomDrop()
     {
         int roll = Random.Range(0, total);
         DropRarity dropRarity;

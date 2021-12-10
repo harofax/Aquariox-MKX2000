@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: legendary
   m_EditorClassIdentifier: 
   drops:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 54e9b5cafe6c156419e77da811dacbce, type: 2}

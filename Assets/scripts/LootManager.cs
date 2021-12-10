@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public enum CoinType
 {
@@ -53,15 +56,20 @@ public class LootManager : MonoBehaviour
             fishDropTables[tableData.Type] = tableData.DropTable;
         }
     }
+    
 
     public void SpawnDrop(FishBase fish)
     {
         DropTable dropTable = fishDropTables[fish.fishType];
 
-        Loot drop = LootTaxi.Instance.GetPooledObjectOfType(dropTable.GetRandomDrop());
+        LootData dropData = dropTable.GetRandomDrop();
+
+        var drop = LootTaxi.Instance.GetPooledObjectOfType(dropData).GetComponent<Loot<LootData>>();
 
         drop.transform.position = fish.transform.position;
         drop.transform.rotation = Random.rotation;
+
+        drop.SetLootData(dropData);
 
         drop.Initiate();
     }

@@ -6,9 +6,9 @@ using UnityEngine;
 public class LootContainer : ScriptableObject
 {
     [SerializeField]
-    private Loot[] drops;
+    private LootData[] drops;
 
-    public Loot GetRandomDrop()
+    public LootData GetRandomDrop()
     {
         return drops[Random.Range(0, drops.Length)];
     }

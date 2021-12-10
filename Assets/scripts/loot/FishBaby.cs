@@ -4,7 +4,7 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-public class FishBaby : Loot
+public class FishBaby : Loot<FishData>, ILoot
 {
     [SerializeField]
     private float growTime;
@@ -13,6 +13,11 @@ public class FishBaby : Loot
     private FishData babyStats;
 
     private Vector3 grownScale;
+
+    public void SetLootData(ILootData data)
+    {
+        throw new System.NotImplementedException();
+    }
 
     public override void Initiate()
     {

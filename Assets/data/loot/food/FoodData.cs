@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Loot/Food Data")]
-public class FoodData : ScriptableObject
+public class FoodData : LootData
 {
+    [Range(1, 10)]
     public float happinessBonus;
-    public float babyProgress;
-    public Mesh foodMesh;
+    [Range(10, 100)]
+    public float hungerFill;
 }
