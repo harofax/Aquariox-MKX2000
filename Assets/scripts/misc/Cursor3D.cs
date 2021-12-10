@@ -90,9 +90,6 @@ public class Cursor3D : MonoBehaviour
             StartCoroutine(ResetPoke(pokeAnimationDuration));
         }
         rightclick = Input.GetKeyDown(KeyCode.Mouse1);
-        
-        if (Input.GetKeyDown(KeyCode.Escape)) Application.Quit();
-
     }
 
     private void SetCursorGraphic()

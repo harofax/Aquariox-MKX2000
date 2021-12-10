@@ -29,7 +29,7 @@ public class FishManager : MonoBehaviour
     private FishType[] fishTypes;
     private Dictionary<FishType, FishBase> fishDatabase = new Dictionary<FishType, FishBase>();
 
-    private int fishCount;
+    internal int fishCount;
     
     public delegate void FishChanged(int value);
     public static event FishChanged OnFishCountChanged;

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -44,6 +45,36 @@ public class GameManager : MonoBehaviour
 
     }
 
+    private void OnEnable()
+    {
+        LoadGame();
+    }
+
+    private void LoadGame()
+    {
+        if (PlayerPrefs.HasKey("SavedMoney"))
+        {
+            money = PlayerPrefs.GetInt("SavedMoney");
+        }
+
+        if (PlayerPrefs.HasKey("SavedFish"))
+        {
+            startFish = PlayerPrefs.GetInt("SavedFish");
+        }
+    }
+
+    private void OnDestroy()
+    {
+        SaveGame();
+    }
+
+    private void SaveGame()
+    {
+        PlayerPrefs.SetInt("SavedMoney", money);
+        PlayerPrefs.SetInt("SavedFish", FishManager.Instance.fishCount);
+        PlayerPrefs.Save();
+    }
+
     public void addMoney(int value)
     {
         money += value;
@@ -61,6 +92,12 @@ public class GameManager : MonoBehaviour
         if (Time.frameCount % fishNeighbourUpdateRate == 0)
         {
             OnSchoolingTick?.Invoke();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SaveGame();
+            Application.Quit();
         }
     }
 }
