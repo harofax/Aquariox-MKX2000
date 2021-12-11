@@ -2,8 +2,10 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Random = UnityEngine.Random;
 
 public enum FishState
@@ -28,8 +30,9 @@ public abstract class FishBase : MonoBehaviour
     [SerializeField]
     internal FishType fishType;
 
+    [FormerlySerializedAs("fishLayer")]
     [SerializeField]
-    private LayerMask fishLayer;
+    private LayerMask sightLayer;
 
     // ------ AI stuff ------------
     private protected float HungerRate { get; private set; }
@@ -68,7 +71,7 @@ public abstract class FishBase : MonoBehaviour
     [SerializeField]
     private float smooth;
 
-    private Collider[] neighbourFish;
+    private Collider[] nearbyThings;
 
     private void Awake()
     {
@@ -76,9 +79,10 @@ public abstract class FishBase : MonoBehaviour
         behaviours = FishManager.Instance.behaviours;
         fishbody = GetComponent<Rigidbody>();
         selfCollider = GetComponent<Collider>();
-        neighbourFish = new Collider[MaxSchoolSize];
+        nearbyThings = new Collider[MaxSchoolSize];
 
         CurrentHunger = 50;
+        CurrentHappiness = 50;
     }
 
     private void OnEnable()
@@ -119,21 +123,29 @@ public abstract class FishBase : MonoBehaviour
         neighbours.Clear();
         int hits = Physics.OverlapSphereNonAlloc(
             transform.position, 
-            SightRange, neighbourFish,
-        fishLayer,
+            SightRange, nearbyThings,
+        sightLayer,
             QueryTriggerInteraction.Collide);
         
         if (hits <= 1) {return;}
         
         for (int i = 0; i < hits; i++)
         {
+            if (currentState == FishState.Hungry)
+            {
+                if (nearbyThings[i].transform.TryGetComponent(out Food food))
+                {
+                    CurrentTarget = nearbyThings[i].transform;
+                    continue;
+                }
+            }
+
             if (neighbours.Count >= MaxSchoolSize) break;
-            if (ReferenceEquals(neighbourFish[i], selfCollider))
+            if (ReferenceEquals(nearbyThings[i], selfCollider))
             {
                 continue;
             }
-            //Debug.DrawLine(transform.position, neighbourFish[i].transform.position, Color.yellow);
-            neighbours.Add(neighbourFish[i].transform);
+            neighbours.Add(nearbyThings[i].transform);
         }
     }
 
@@ -216,7 +228,7 @@ public abstract class FishBase : MonoBehaviour
     private void OnTickHunger()
     {
         CurrentHunger -= Random.value * HungerRate;
-        if (CurrentHunger < 20)
+        if (CurrentHunger < 45)
         {
             currentState = FishState.Hungry;
         }
@@ -224,17 +236,21 @@ public abstract class FishBase : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        if (other.transform.TryGetComponent(out Food food))
+        if (currentState == FishState.Hungry)
         {
-            CurrentHunger += food.hungerFill;
-            CurrentHappiness += food.happinessBonus;
-
-            if (CurrentHunger > 20)
+            if (other.transform.TryGetComponent(out Food food))
             {
-                currentState = FishState.Idle;
+                CurrentHunger += food.hungerFill;
+                CurrentHappiness += food.happinessBonus;
+
+                if (CurrentHunger > 45)
+                {
+                    currentState = FishState.Idle;
+                }
+
+                food.ReturnToPool();
+                CurrentTarget = null;
             }
-            
-            food.ReturnToPool();
         }
     }
 

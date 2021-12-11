@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: mullet droptable
   m_EditorClassIdentifier: 
   normalDropRate: 100
-  rareDropRate: 40
-  epicDropRate: 30
-  legendaryDropRate: 10
-  total: 180
+  rareDropRate: 130
+  epicDropRate: 135
+  legendaryDropRate: 136
   drops:
   - {fileID: 11400000, guid: bc06c0ddbe5e43b44bfea4b0553193b2, type: 2}
   - {fileID: 11400000, guid: 7276f00e71c122c43b23a2e162e18723, type: 2}

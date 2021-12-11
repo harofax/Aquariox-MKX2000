@@ -10,7 +10,7 @@ public class GiantGoldFish : FishBase
     private protected override void Execute()
     {
         var lootRoll = Random.Range(0, 100);
-        if (lootRoll < LootRate + LootBonus * HappinessModifier)
+        if (lootRoll < LootRate + LootBonus * HappinessModifier * (CurrentHunger / 50))
         {
             LootManager.Instance.SpawnDrop(this);
         }

@@ -34,6 +34,10 @@ public class FishManager : MonoBehaviour
     public delegate void FishChanged(int value);
     public static event FishChanged OnFishCountChanged;
 
+    public delegate void FishCostChanged(int newCost);
+
+    public static event FishCostChanged OnFishCostChanged;
+
     private static FishManager _instance;
     public static FishManager Instance => _instance;
 
@@ -97,7 +101,11 @@ public class FishManager : MonoBehaviour
 
         FishBaby baby = SpawnNewFish(GetRandomFishType()).AddComponent<FishBaby>();
         baby.InitBaby();
-        
+        if (fishCount % 2 == 0)
+        {
+            fishCost += fishCount * 2;
+        }
+        OnFishCostChanged?.Invoke(fishCost);
     }
 
     // Update is called once per frame

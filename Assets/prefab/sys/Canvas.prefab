@@ -791,7 +791,7 @@ GameObject:
   - component: {fileID: 5079326495980029860}
   - component: {fileID: 5813492142105522213}
   m_Layer: 7
-  m_Name: FishPrice
+  m_Name: FoodPrice
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

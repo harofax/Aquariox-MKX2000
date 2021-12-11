@@ -78,9 +78,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: 7527dfe67255e1b42be0809acad79138, type: 2}
   fishType: 2
-  fishLayer:
+  sightLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   smooth: 0.53
 --- !u!1 &5061024880832038365
 GameObject:

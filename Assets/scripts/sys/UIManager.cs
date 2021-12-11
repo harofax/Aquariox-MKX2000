@@ -12,6 +12,11 @@ public class UIManager : MonoBehaviour
     private TMP_Text moneyField;
     [SerializeField]
     private TMP_Text fishField;
+
+    [SerializeField]
+    private TMP_Text foodCostField;
+    [SerializeField]
+    private TMP_Text fishCostField;
     
     private static UIManager _instance;
     public static UIManager Instance => _instance;
@@ -32,12 +37,19 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnMoneyChanged += RefreshMoneyUI;
         FishManager.OnFishCountChanged += RefreshFishUI;
+        FishManager.OnFishCostChanged += UpdateFishCost;
+    }
+
+    private void UpdateFishCost(int value)
+    {
+        fishCostField.text =  $"€ {value}";
     }
 
     private void OnDisable()
     {
         GameManager.OnMoneyChanged -= RefreshMoneyUI;
         FishManager.OnFishCountChanged -= RefreshFishUI;
+        FishManager.OnFishCostChanged -= UpdateFishCost;
     }
 
     private void RefreshFishUI(int value)

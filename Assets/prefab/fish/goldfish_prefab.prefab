@@ -384,9 +384,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fishStats: {fileID: 11400000, guid: a2a978b9ebcd9304fbc73dc13c1724f8, type: 2}
   fishType: 1
-  fishLayer:
+  sightLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 320
   smooth: 0.53
 --- !u!1001 &2394018961832377914
 PrefabInstance:

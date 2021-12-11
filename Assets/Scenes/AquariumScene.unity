@@ -222,6 +222,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &514640674 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5813492142105522213, guid: e59fdb3a8be29924f8d7860ccac63d14, type: 3}
+  m_PrefabInstance: {fileID: 7662641177701889226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &767968535
 GameObject:
   m_ObjectHideFlags: 0
@@ -502,6 +513,17 @@ MonoBehaviour:
 --- !u!114 &1051356913 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7662641175989894037, guid: e59fdb3a8be29924f8d7860ccac63d14, type: 3}
+  m_PrefabInstance: {fileID: 7662641177701889226}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1200060574 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1602280956825682013, guid: e59fdb3a8be29924f8d7860ccac63d14, type: 3}
   m_PrefabInstance: {fileID: 7662641177701889226}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -1164,6 +1186,14 @@ PrefabInstance:
       propertyPath: moneyField
       value: 
       objectReference: {fileID: 1903457858}
+    - target: {fileID: 8098787878239537765, guid: 05f417f15d4ad4d42a6131dcee25da01, type: 3}
+      propertyPath: fishCostField
+      value: 
+      objectReference: {fileID: 1200060574}
+    - target: {fileID: 8098787878239537765, guid: 05f417f15d4ad4d42a6131dcee25da01, type: 3}
+      propertyPath: foodCostField
+      value: 
+      objectReference: {fileID: 514640674}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 05f417f15d4ad4d42a6131dcee25da01, type: 3}
 --- !u!1001 &8649879627227780080

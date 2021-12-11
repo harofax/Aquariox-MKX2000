@@ -15,9 +15,21 @@ public class GameManager : MonoBehaviour
     [SerializeField, Range(0, 60), Tooltip("Will execute tick every x frames")]
     private int tickRate;
 
-
     private int money;
-    public int Money => money;
+
+
+    public int Money
+    {
+        get => money;
+        private set
+        {
+            if (value != money)
+            {
+                money = value;
+                OnMoneyChanged?.Invoke(money);
+            } 
+        } 
+    }
 
     public delegate void MoneyChanged(int value);
     public static event MoneyChanged OnMoneyChanged;
@@ -48,8 +60,9 @@ public class GameManager : MonoBehaviour
 
     }
 
-    private void OnEnable()
+    private void Start()
     {
+        PlayerPrefs.DeleteAll();
         LoadGame();
     }
 
@@ -57,8 +70,7 @@ public class GameManager : MonoBehaviour
     {
         if (PlayerPrefs.HasKey("SavedMoney"))
         {
-            money = PlayerPrefs.GetInt("SavedMoney");
-            OnMoneyChanged?.Invoke(money);
+            Money = PlayerPrefs.GetInt("SavedMoney");
         }
 
         if (PlayerPrefs.HasKey("SavedFish"))
@@ -74,15 +86,14 @@ public class GameManager : MonoBehaviour
 
     private void SaveGame()
     {
-        PlayerPrefs.SetInt("SavedMoney", money);
+        PlayerPrefs.SetInt("SavedMoney", Money);
         PlayerPrefs.SetInt("SavedFish", FishManager.Instance.fishCount);
         PlayerPrefs.Save();
     }
 
     public void addMoney(int value)
     {
-        money += value;
-        OnMoneyChanged?.Invoke(money);
+        Money += value;
     }
 
     // Update is called once per frame

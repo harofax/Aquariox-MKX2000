@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdde1f9d272c18249b6b53c967ab1a18, type: 3}
   m_Name: pill
   m_EditorClassIdentifier: 
-  happinessBonus: 2.06
-  hungerFill: 14.5
+  happinessBonus: 1.57
+  hungerFill: 15.3

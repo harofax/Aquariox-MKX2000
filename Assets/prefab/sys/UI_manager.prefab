@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moneyField: {fileID: 0}
   fishField: {fileID: 0}
+  foodCostField: {fileID: 0}
+  fishCostField: {fileID: 0}

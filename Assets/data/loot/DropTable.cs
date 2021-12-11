@@ -21,20 +21,21 @@ public class DropTable : ScriptableObject
     public int epicDropRate;
     public int legendaryDropRate;
 
-    [HideInInspector]
-    public int total;
+    // [HideInInspector]
+    // public int total;
 
     public LootContainer[] drops;
     
     private void OnEnable()
     {
-        total = normalDropRate + rareDropRate + epicDropRate + legendaryDropRate;
+        //total = normalDropRate + rareDropRate + epicDropRate + legendaryDropRate;
     }
 
     public LootData GetRandomDrop()
     {
-        int roll = Random.Range(0, total);
+        int roll = Random.Range(0, legendaryDropRate);
         DropRarity dropRarity;
+        
         switch (roll)
         {
             case var n when (n <= normalDropRate):
@@ -50,6 +51,7 @@ public class DropTable : ScriptableObject
                 dropRarity = DropRarity.Legendary;
                 break;
             default:
+                Debug.LogError("error not loot good", this);
                 dropRarity = DropRarity.Common;
                 break;
         }

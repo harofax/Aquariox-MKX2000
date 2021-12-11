@@ -12,11 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddbac6777844e4244913618e2f6f2407, type: 3}
   m_Name: goldfish droptable
   m_EditorClassIdentifier: 
-  normalDropRate: 70
-  rareDropRate: 40
-  epicDropRate: 25
-  legendaryDropRate: 10
-  total: 160
+  normalDropRate: 95
+  rareDropRate: 115
+  epicDropRate: 120
+  legendaryDropRate: 121
   drops:
   - {fileID: 11400000, guid: bd44d48f6aa69d14b844ba5a23c5b58b, type: 2}
   - {fileID: 11400000, guid: c751154b03f829942856953a3e1950e1, type: 2}
