@@ -220,7 +220,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &514640674 stripped
 MonoBehaviour:
@@ -298,7 +298,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &963194225
 GameObject:
@@ -631,7 +631,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1903457858 stripped
 MonoBehaviour:
@@ -677,7 +677,7 @@ PrefabInstance:
       objectReference: {fileID: 1781097572}
     - target: {fileID: 429101039678214519, guid: b4ae55592d310344d8db020016e6dcd2, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 429101039678214519, guid: b4ae55592d310344d8db020016e6dcd2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -791,7 +791,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1958022989888247924, guid: e9b4d351024b3b74db36370a38db1453, type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1958022989888247924, guid: e9b4d351024b3b74db36370a38db1453, type: 3}
       propertyPath: m_LocalPosition.x
@@ -852,7 +852,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2950065313527750107, guid: 5312300798a822041a13d68bdf815c64, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2950065313527750107, guid: 5312300798a822041a13d68bdf815c64, type: 3}
       propertyPath: m_LocalPosition.x
@@ -951,6 +951,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 6380211640480187003, guid: 9158f011b35b82040afd7ba3418989f1, type: 3}
+      propertyPath: startFish
+      value: 18
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9158f011b35b82040afd7ba3418989f1, type: 3}
 --- !u!1001 &7029880626422338102
@@ -966,7 +970,7 @@ PrefabInstance:
       objectReference: {fileID: 1958109625}
     - target: {fileID: 7029880627639132483, guid: b387c457150e7df49a383350635b26d2, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7029880627639132483, guid: b387c457150e7df49a383350635b26d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1203,6 +1207,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8649879626914817796, guid: b6c211a7b6f19a04abcce3ee5ac0bdb6, type: 3}
+      propertyPath: m_Size.y
+      value: 25.68
+      objectReference: {fileID: 0}
+    - target: {fileID: 8649879626914817796, guid: b6c211a7b6f19a04abcce3ee5ac0bdb6, type: 3}
+      propertyPath: m_Center.y
+      value: 2.3
+      objectReference: {fileID: 0}
     - target: {fileID: 8649879628094812743, guid: b6c211a7b6f19a04abcce3ee5ac0bdb6, type: 3}
       propertyPath: m_Name
       value: Aquarium

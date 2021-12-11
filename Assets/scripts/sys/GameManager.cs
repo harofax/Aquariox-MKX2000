@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     private int tickRate;
 
     private int money;
+    private int numFish;
 
 
     public int Money
@@ -45,6 +47,9 @@ public class GameManager : MonoBehaviour
     
     private static GameManager _instance;
     public static GameManager Instance => _instance;
+
+    private const string saveMoneyPath = "moneySaved";
+    private const string saveFishNumPath = "numberOfFish";
     
 
     void Awake()
@@ -57,36 +62,43 @@ public class GameManager : MonoBehaviour
         {
             _instance = this;
         }
-
+        LoadGame();
     }
 
-    private void Start()
+    private void OnEnable()
     {
-        LoadGame();
+        FishManager.OnFishCountChanged += RefreshFish;
+    }
+
+    private void OnDisable()
+    {
+        FishManager.OnFishCountChanged -= RefreshFish;
+    }
+
+    private void RefreshFish(int value)
+    {
+        numFish = value;
     }
 
     private void LoadGame()
     {
-        if (PlayerPrefs.HasKey("SavedMoney"))
+        if (PlayerPrefs.HasKey(saveMoneyPath))
         {
-            Money = PlayerPrefs.GetInt("SavedMoney");
+            Money = PlayerPrefs.GetInt(saveMoneyPath, 0);
+            OnMoneyChanged?.Invoke(money);
         }
 
-        if (PlayerPrefs.HasKey("SavedFish"))
+        if (PlayerPrefs.HasKey(saveFishNumPath))
         {
-            startFish = PlayerPrefs.GetInt("SavedFish");
+            startFish = PlayerPrefs.GetInt(saveFishNumPath, startFish);
+            numFish = startFish;
         }
-    }
-
-    private void OnDestroy()
-    {
-        SaveGame();
     }
 
     private void SaveGame()
     {
-        PlayerPrefs.SetInt("SavedMoney", Money);
-        PlayerPrefs.SetInt("SavedFish", FishManager.Instance.fishCount);
+        PlayerPrefs.SetInt(saveMoneyPath, Money);
+        PlayerPrefs.SetInt(saveFishNumPath, numFish);
         PlayerPrefs.Save();
     }
 

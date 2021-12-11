@@ -29,13 +29,13 @@ public class FishManager : MonoBehaviour
     private FishType[] fishTypes;
     private Dictionary<FishType, FishBase> fishDatabase = new Dictionary<FishType, FishBase>();
 
-    internal int fishCount;
+    private int fishCount;
+    public int FishCount => fishCount;
     
     public delegate void FishChanged(int value);
     public static event FishChanged OnFishCountChanged;
 
     public delegate void FishCostChanged(int newCost);
-
     public static event FishCostChanged OnFishCostChanged;
 
     private static FishManager _instance;
@@ -53,6 +53,7 @@ public class FishManager : MonoBehaviour
         }
 
         fishTypes = (FishType[])Enum.GetValues(typeof(FishType));
+
     }
 
     // Start is called before the first frame update
@@ -86,7 +87,12 @@ public class FishManager : MonoBehaviour
         FishBase fish = Instantiate(fishDatabase[type], startPos, startRot);
         fishCount++;
         OnFishCountChanged?.Invoke(fishCount);
-
+        if (fishCount % 2 == 0)
+        {
+            fishCost += fishCount * 2;
+        }
+        OnFishCostChanged?.Invoke(fishCost);
+        
         return fish;
     }
 
@@ -101,11 +107,6 @@ public class FishManager : MonoBehaviour
 
         FishBaby baby = SpawnNewFish(GetRandomFishType()).AddComponent<FishBaby>();
         baby.InitBaby();
-        if (fishCount % 2 == 0)
-        {
-            fishCost += fishCount * 2;
-        }
-        OnFishCostChanged?.Invoke(fishCost);
     }
 
     // Update is called once per frame

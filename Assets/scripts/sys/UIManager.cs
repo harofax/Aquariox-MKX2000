@@ -33,6 +33,12 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        RefreshMoneyUI(GameManager.Instance.Money);
+        RefreshFishUI(FishManager.Instance.FishCount);
+    }
+
     private void OnEnable()
     {
         GameManager.OnMoneyChanged += RefreshMoneyUI;
